@@ -3,7 +3,8 @@ TODO
 * implement mother looking for you
 	* pops out from behind furniture? runs around with pathing? 
 	* game over if youre seen? 1,2, or 3 times?
-* 
+* set up sound cues and stuff
+* movement things
 
 COMPLETED
 * Make light source come from sun object and projects towards you
@@ -12,6 +13,6 @@ COMPLETED
 * debug controls for sun to simulate movement for now
 
 NOTES
-*
-*
+* possibly add dot product value to sun energy value (brighter when more focused on it)
+* possibly add dot product with some modifier to camera zoom
 *

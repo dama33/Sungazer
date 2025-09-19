@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bed4h28ynrf28"]
+[gd_scene load_steps=8 format=3 uid="uid://bed4h28ynrf28"]
 
 [ext_resource type="Script" uid="uid://befikjo5tp80e" path="res://src/world/sun.gd" id="1_nwmkd"]
 
@@ -14,8 +14,6 @@ background_mode = 2
 sky = SubResource("Sky_ukrvp")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_nwmkd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8r68"]
 albedo_color = Color(0.79607844, 0.15294118, 0.23921569, 1)
@@ -35,7 +33,7 @@ environment = SubResource("Environment_2vopr")
 transform = Transform3D(-0.8660254, -0.50000006, -2.1855696e-08, 0, -4.371139e-08, 1, -0.50000006, 0.8660254, 3.7855173e-08, 0, 0, 0)
 shadow_enabled = true
 shadow_caster_mask = 4294443007
-directional_shadow_max_distance = 4096.0
+directional_shadow_max_distance = 50.1
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
@@ -45,10 +43,6 @@ aabb = AABB(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2)
 unique_name_in_owner = true
 collide_with_areas = true
 debug_shape_custom_color = Color(3.2488256e-06, 0.64844716, 1.92523e-07, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RayCast3D"]
-transform = Transform3D(-0.03, 0, 0, 0, -0.03, 0, 0, 0, -0.03, 0, -0.056557525, 0)
-mesh = SubResource("CapsuleMesh_nwmkd")
 
 [node name="DebugMesh" type="MeshInstance3D" parent="."]
 layers = 524288
