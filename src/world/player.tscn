@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckudr8chj1kgo"]
+[gd_scene load_steps=3 format=3 uid="uid://ckudr8chj1kgo"]
 
 [ext_resource type="Script" uid="uid://br1seygui4q2b" path="res://src/world/player.gd" id="1_4flbx"]
 
-[node name="Player" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_cixmp"]
+
+[node name="Area3D" type="Area3D"]
 script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_cixmp")
 
 [node name="Pivot" type="Node3D" parent="."]
 unique_name_in_owner = true
