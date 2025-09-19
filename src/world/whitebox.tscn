@@ -40,9 +40,6 @@ skeleton = NodePath("")
 [node name="Sun" parent="." instance=ExtResource("2_4xxeg")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -2.432211, 30.439358, 66.92793)
 
-[node name="DebugCamera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.20841196, 0.36596534, 0.9069917, -0.031303532, 0.9243842, -0.38017616, -0.97753996, -0.107625246, -0.18119672, 49.415756, 10.831852, 0)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.635, 21.923, 4.701)
 
