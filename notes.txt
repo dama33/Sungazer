@@ -1,0 +1,17 @@
+TODO
+* sun moving across sky automatically
+* implement mother looking for you
+	* pops out from behind furniture? runs around with pathing? 
+	* game over if youre seen? 1,2, or 3 times?
+* 
+
+COMPLETED
+* Make light source come from sun object and projects towards you
+* scaling damage based on how directly you are looking at the sun (needs number tweaking)
+* functionality of knowing when sun is being looked at and obstructed
+* debug controls for sun to simulate movement for now
+
+NOTES
+*
+*
+*
