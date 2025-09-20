@@ -1,5 +1,4 @@
 TODO
-* sun moving across sky automatically
 * implement mother looking for you
 	* pops out from behind furniture? runs around with pathing? 
 	* game over if youre seen? 1,2, or 3 times?
@@ -16,6 +15,7 @@ COMPLETED
 * sound kinda set up???
 * possibly add dot product value to sun energy value (brighter when more focused on it)
 * possibly add dot product with some modifier to camera zoom
+* sun moving across sky automatically
 
 NOTES
 *
