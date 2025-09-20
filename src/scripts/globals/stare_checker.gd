@@ -10,7 +10,7 @@ signal sun_exited_view
 
 var sun_on_screen_notifier: VisibleOnScreenNotifier3D = null
 var player: Player
-var sun_raycast: RayCast3D = null
+var sun: Sun
 var is_sun_in_view: bool = false
 var is_sun_on_screen: bool = false
 
@@ -23,14 +23,15 @@ func _ready() -> void:
 ## Check every frame if the sun has become obstructed or was obstructed and is
 ## no longer.
 func _physics_process(delta: float) -> void:
+	var dot_product = player.player_camera.global_transform.basis.z.dot(player.player_camera.global_position.direction_to(sun.sun_raycast.global_position))
+	
+	#IF YOU WANT TO TEST WITHOUT THE ZOOM IN AND ENERGY, COMMENT OUT THESE LINES
+	visual_sun_effects(dot_product)
+	
 	if not is_sun_on_screen:
 		return
 	elif is_sun_on_screen and is_sun_in_view:
-		EyeHealth.take_damage(
-			abs(player.player_camera.global_transform.basis.z.dot(player.player_camera.global_position.direction_to(sun_raycast.global_position))),
-			delta
-		)
-
+		EyeHealth.take_damage(abs(dot_product),delta)
 	var is_visibility_obstructed_now = is_visibility_obstructed()
 	if is_visibility_obstructed_now and is_sun_in_view:
 		sun_exited_view.emit()
@@ -39,6 +40,10 @@ func _physics_process(delta: float) -> void:
 		sun_entered_view.emit()
 		is_sun_in_view = true
 
+func visual_sun_effects(dot_product: float):
+	if dot_product<0:
+		sun.directional_light.light_energy = 1+(6*-dot_product)
+		player.player_camera.fov = player.FOV_DEFAULT-(pow(65,abs(dot_product)))
 
 func is_looking_at_sun() -> bool:
 	return is_sun_in_view
@@ -46,33 +51,36 @@ func is_looking_at_sun() -> bool:
 
 ## Gets the current global position of the sun
 func get_sun_global_position() -> Vector3:
-	assert(sun_raycast != null, "sun's raycast was not registered before calling this method!")
-	return sun_raycast.global_position
+	assert(sun.sun_raycast != null, "sun's raycast was not registered before calling this method!")
+	return sun.sun_raycast.global_position
 
 
 ## Should be called in the _ready function of the sun node
-func register_sun_stuff(notifier: VisibleOnScreenNotifier3D, raycast: RayCast3D) -> void:
-	sun_on_screen_notifier = notifier
-	sun_raycast = raycast
-	sun_on_screen_notifier.screen_entered.connect(_on_notifier_entered_screen)
-	sun_on_screen_notifier.screen_exited.connect(_on_notifier_exited_screen)
-	if player.player_camera != null:
+func register_sun(sun_value: Sun):
+	sun_on_screen_notifier = sun_value.on_screen_notifier
+	self.sun = sun_value
+	
+	if player != null:
 		set_physics_process.call_deferred(true)
+		sun_on_screen_notifier.screen_entered.connect(_on_notifier_entered_screen)
+		sun_on_screen_notifier.screen_exited.connect(_on_notifier_exited_screen)
 
 
 ## Should be called in the _ready function of the player node
 func register_player(init_player: Player) -> void:
 	player = init_player
-	if sun_on_screen_notifier != null and sun_raycast != null:
+	if sun_on_screen_notifier != null and sun.sun_raycast != null:
 		set_physics_process.call_deferred(true)
+		sun_on_screen_notifier.screen_entered.connect(_on_notifier_entered_screen)
+		sun_on_screen_notifier.screen_exited.connect(_on_notifier_exited_screen)
 
 
 ## Checks if there is a line of sight between the player and the sun. Returns
 ## true if the player can see the sun.
 func is_visibility_obstructed() -> bool:
-	sun_raycast.target_position = sun_raycast.to_local(player.player_camera.global_position)
-	sun_raycast.force_raycast_update()
-	return sun_raycast.get_collider() is not Player
+	sun.sun_raycast.target_position = sun.sun_raycast.to_local(player.player_camera.global_position)
+	sun.sun_raycast.force_raycast_update()
+	return sun.sun_raycast.get_collider() is not Player
 
 
 func _on_notifier_entered_screen() -> void:

@@ -1,7 +1,14 @@
-[gd_scene load_steps=7 format=4 uid="uid://bhdh3u7e2fuon"]
+[gd_scene load_steps=8 format=4 uid="uid://bhdh3u7e2fuon"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://src/world/player.tscn" id="1_o8h8f"]
 [ext_resource type="PackedScene" uid="uid://bed4h28ynrf28" path="res://src/world/sun.tscn" id="2_4xxeg"]
+
+[sub_resource type="Curve3D" id="Curve3D_4xxeg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 243.796, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 243.796, -243.796, 0, 243.796, 0, 0, 0, 0, 0, 0, -488),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8r68"]
 albedo_color = Color(0.79607844, 0.15294118, 0.23921569, 1)
@@ -25,6 +32,17 @@ _surfaces = [{
 
 [node name="Whitebox" type="Node3D"]
 
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 243.794)
+curve = SubResource("Curve3D_4xxeg")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.3709914e-08, 0.99997634, -4.370918e-08, 0, -4.3710354e-08, -0.99994946, -0.99996626, -4.3710354e-08, 1.910589e-15, 0, 0, 0)
+tilt_enabled = false
+
+[node name="Sun" parent="Path3D/PathFollow3D" instance=ExtResource("2_4xxeg")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
 [node name="Player" parent="." instance=ExtResource("1_o8h8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1668396, 2.0134964, -2.4152832)
 
@@ -36,9 +54,6 @@ size = Vector3(23.114685, 1, 44.03296)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75026226, 2.5510325, -10.577169)
 mesh = SubResource("SphereMesh_xhn5b")
 skeleton = NodePath("")
-
-[node name="Sun" parent="." instance=ExtResource("2_4xxeg")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -2.432211, 30.439358, 66.92793)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.635, 21.923, 4.701)

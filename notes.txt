@@ -3,7 +3,6 @@ TODO
 * implement mother looking for you
 	* pops out from behind furniture? runs around with pathing? 
 	* game over if youre seen? 1,2, or 3 times?
-* set up sound cues and stuff
 * movement things
 * Shaders
 	* Blur when eyes damaged
@@ -14,10 +13,11 @@ COMPLETED
 * scaling damage based on how directly you are looking at the sun (needs number tweaking)
 * functionality of knowing when sun is being looked at and obstructed
 * debug controls for sun to simulate movement for now
-
-NOTES
+* sound kinda set up???
 * possibly add dot product value to sun energy value (brighter when more focused on it)
 * possibly add dot product with some modifier to camera zoom
+
+NOTES
 *
 
 IF TIME EXTENSIONS

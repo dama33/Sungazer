@@ -4,15 +4,16 @@ class_name Player
 var mouse_sensitivity:float = .005
 @onready var player_camera = $Pivot/Camera3D
 @onready var game_over_ui = preload("uid://c67s7krlh3p17")
+var FOV_DEFAULT
 
 func _ready():
+	StareChecker.register_player(self)
+	FOV_DEFAULT = player_camera.fov
 	random_time_for_mom_timer()
 	random_time_for_countdown_start_timer()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	StareChecker.register_player(self)
 	StareChecker.sun_entered_view.connect(_temp_enter)
 	StareChecker.sun_exited_view.connect(_temp_exit)
-
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):

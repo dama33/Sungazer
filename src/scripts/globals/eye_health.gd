@@ -31,6 +31,7 @@ func take_damage(dot_product_value: float, time_delta: float) -> void:
 		return
 	current_health -= damage_amount
 	eyes_damaged.emit(current_health)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), -60 + (dot_product_value * 60))
+	var value = -60 + (dot_product_value * 60)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value)
 	if current_health < 0:
 		blindness_achieved.emit()
