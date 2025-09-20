@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+EyeHealth="*res://src/scripts/globals/eye_health.gd"
 StareChecker="*res://src/scripts/globals/stare_checker.gd"
 
 [input]

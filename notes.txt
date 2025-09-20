@@ -5,6 +5,9 @@ TODO
 	* game over if youre seen? 1,2, or 3 times?
 * set up sound cues and stuff
 * movement things
+* Shaders
+	* Blur when eyes damaged
+	* Spots in vision? Black border on the outside?
 
 COMPLETED
 * Make light source come from sun object and projects towards you
@@ -16,3 +19,6 @@ NOTES
 * possibly add dot product value to sun energy value (brighter when more focused on it)
 * possibly add dot product with some modifier to camera zoom
 *
+
+IF TIME EXTENSIONS
+* Mini game where you have to do a vision test for Mom
