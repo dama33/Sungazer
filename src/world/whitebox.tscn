@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://bhdh3u7e2fuon"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://src/world/player.tscn" id="1_o8h8f"]
-[ext_resource type="PackedScene" uid="uid://bed4h28ynrf28" path="res://src/world/sun.tscn" id="2_4xxeg"]
+[ext_resource type="PackedScene" uid="uid://6nmxrbw28bxn" path="res://src/world/sun.tscn" id="2_4xxeg"]
 
 [sub_resource type="Curve3D" id="Curve3D_4xxeg"]
 _data = {

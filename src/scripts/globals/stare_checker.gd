@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	var dot_product = player.player_camera.global_transform.basis.z.dot(player.player_camera.global_position.direction_to(sun.sun_raycast.global_position))
 	
 	#IF YOU WANT TO TEST WITHOUT THE ZOOM IN AND ENERGY, COMMENT OUT THESE LINES
-	visual_sun_effects(dot_product)
+	#visual_sun_effects(dot_product)
 	
 	if not is_sun_on_screen:
 		return

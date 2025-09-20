@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce71envgjgdg7"]
+
+[ext_resource type="Script" uid="uid://bxkq8xydqtroa" path="res://src/main/main.gd" id="1_3eh75"]
+[ext_resource type="Texture2D" uid="uid://b2l4dyskl1ky4" path="res://assets/bottom_corner_ui/smirk.png" id="2_djufw"]
+[ext_resource type="PackedScene" uid="uid://bhdh3u7e2fuon" path="res://src/world/whitebox.tscn" id="3_djufw"]
+[ext_resource type="Script" uid="uid://coaejx18pi1lm" path="res://src/main/character_face_ui.gd" id="3_jkpqq"]
+[ext_resource type="Script" uid="uid://cbd2jymfvjfom" path="res://src/main/world_environment.gd" id="5_jkpqq"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jqarl"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.01
+dof_blur_far_transition = 0.0
+dof_blur_amount = 0.0
+
+[node name="Main" type="Node"]
+script = ExtResource("1_3eh75")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_djufw")
+expand_mode = 3
+script = ExtResource("3_jkpqq")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Whitebox" parent="World" instance=ExtResource("3_djufw")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+camera_attributes = SubResource("CameraAttributesPractical_jqarl")
+script = ExtResource("5_jkpqq")
