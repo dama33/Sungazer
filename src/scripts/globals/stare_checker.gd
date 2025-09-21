@@ -18,6 +18,7 @@ var is_sun_on_screen: bool = false
 func _ready() -> void:
 	set_physics_process(false)
 	EyeHealth.blindness_achieved.connect(_on_blindness_achieved)
+	set_physics_process_priority(-1)
 
 
 ## Check every frame if the sun has become obstructed or was obstructed and is

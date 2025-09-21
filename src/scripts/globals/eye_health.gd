@@ -13,18 +13,16 @@ const MAX_DPS: float = 2000
 
 var current_health: int
 var is_blindness_achieved: bool = false
-var damage_by_pixel: Array[Array] = []
+var last_damaged_pixel: Vector3 = Vector3.ZERO
 
 
 func _ready() -> void:
 	current_health = STARTING_HEALTH
-	# Initialize a 2D array of all the pixels on the screen
-	damage_by_pixel.resize(1080)
-	for pixel_row in range(1080):
-		var row_array = []
-		row_array.resize(1920)
-		row_array.fill(0)
-		damage_by_pixel[pixel_row] = row_array
+	set_physics_process_priority(-2)
+
+
+func _physics_process(_delta: float) -> void:
+	last_damaged_pixel = Vector3.ZERO
 
 
 func get_current_health() -> int:
@@ -39,7 +37,7 @@ func take_damage(dot_product_value: float, sun_screen_position: Vector2, time_de
 		return
 	var x_pixel_index = max(min(int(sun_screen_position.x), 1919), 0)
 	var y_pixel_index = max(min(int(sun_screen_position.y), 1079), 0)
-	damage_by_pixel[y_pixel_index][x_pixel_index] += damage_amount
+	last_damaged_pixel = Vector3(x_pixel_index, y_pixel_index, damage_amount)
 	current_health -= damage_amount
 	eyes_damaged.emit(current_health)
 	var value = -60 + (dot_product_value * 60)
