@@ -1,4 +1,4 @@
-[gd_resource type="CameraAttributesPractical" format=3 uid="uid://cenpk23wpp0wx"]
+[gd_resource type="CameraAttributesPractical" load_steps=0 format=3 uid="uid://cenpk23wpp0wx"]
 
 [resource]
 dof_blur_far_enabled = true

@@ -2,10 +2,12 @@ TODO
 * implement mother looking for you
 	* pops out from behind furniture? runs around with pathing? 
 	* game over if youre seen? 1,2, or 3 times?
-* movement things
-* Shaders
-	* Blur when eyes damaged
-	* Spots in vision? Black border on the outside?
+	* spatial audio for location? Different sound cues? 
+* start setting up title screen
+* start setting up introduction
+* tooltips for how to play
+* start setting up credits/win screen
+* Mini game where you have to do a vision test for Mom
 
 COMPLETED
 * Make light source come from sun object and projects towards you
@@ -16,9 +18,11 @@ COMPLETED
 * possibly add dot product value to sun energy value (brighter when more focused on it)
 * possibly add dot product with some modifier to camera zoom
 * sun moving across sky automatically
+* Shaders
+	* Blur when eyes damaged
+	* Spots in vision? Black border on the outside?
+* movement things
+
 
 NOTES
 *
-
-IF TIME EXTENSIONS
-* Mini game where you have to do a vision test for Mom
