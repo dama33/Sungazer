@@ -1,8 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
-var mouse_sensitivity:float = .005
-@onready var player_camera = $Pivot/Camera3D
+var mouse_sensitivity: float = .005
+@onready var player_camera: Camera3D = $Pivot/Camera3D
 @onready var game_over_ui = preload("uid://c67s7krlh3p17")
 var FOV_DEFAULT
 
@@ -57,6 +57,7 @@ func _on_countdown_start_timer_timeout() -> void:
 func _on_mom_timer_timeout() -> void:
 	%Danger.stop()
 	if StareChecker.is_looking_at_sun():
-		add_child(game_over_ui.instantiate())
+		pass
+		#add_child(game_over_ui.instantiate())
 	random_time_for_mom_timer()
 	%CountdownStartTimer.start()

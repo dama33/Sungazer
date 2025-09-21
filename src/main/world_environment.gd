@@ -1,7 +1,7 @@
 extends WorldEnvironment
 
 
-const BLUR_INTENSITY: float = 0.15
+const BLUR_INTENSITY: float = 0.25
 
 
 var camera: CameraAttributesPractical
