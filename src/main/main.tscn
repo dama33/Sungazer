@@ -1,10 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce71envgjgdg7"]
+[gd_scene load_steps=10 format=3 uid="uid://ce71envgjgdg7"]
 
 [ext_resource type="Script" uid="uid://bxkq8xydqtroa" path="res://src/main/main.gd" id="1_3eh75"]
 [ext_resource type="Texture2D" uid="uid://b2l4dyskl1ky4" path="res://assets/bottom_corner_ui/smirk.png" id="2_djufw"]
 [ext_resource type="PackedScene" uid="uid://bhdh3u7e2fuon" path="res://src/world/whitebox.tscn" id="3_djufw"]
 [ext_resource type="Script" uid="uid://coaejx18pi1lm" path="res://src/main/character_face_ui.gd" id="3_jkpqq"]
 [ext_resource type="Script" uid="uid://cbd2jymfvjfom" path="res://src/main/world_environment.gd" id="5_jkpqq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nwmkd"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ukrvp"]
+sky_material = SubResource("ProceduralSkyMaterial_nwmkd")
+
+[sub_resource type="Environment" id="Environment_jkpqq"]
+background_mode = 2
+sky = SubResource("Sky_ukrvp")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jqarl"]
 dof_blur_far_enabled = true
@@ -45,5 +58,6 @@ script = ExtResource("3_jkpqq")
 [node name="Whitebox" parent="World" instance=ExtResource("3_djufw")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jkpqq")
 camera_attributes = SubResource("CameraAttributesPractical_jqarl")
 script = ExtResource("5_jkpqq")

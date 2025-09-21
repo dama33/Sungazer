@@ -1,4 +1,4 @@
-extends Area3D
+extends CharacterBody3D
 class_name Player
 
 var mouse_sensitivity:float = .005
@@ -15,11 +15,17 @@ func _ready():
 	StareChecker.sun_entered_view.connect(_temp_enter)
 	StareChecker.sun_exited_view.connect(_temp_exit)
 
+func _physics_process(delta: float) -> void:
+	var input_direction = Input.get_vector("debug_left","debug_right","debug_forward","debug_back")
+	var direction = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
+	velocity = direction * 200 * delta
+	move_and_slide()
+
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else: 
+		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event is InputEventMouseMotion && Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
 		rotate_y(-event.relative.x * mouse_sensitivity)
@@ -27,7 +33,7 @@ func _input(event: InputEvent) -> void:
 		%Pivot.rotation.x = clamp(%Pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func random_time_for_countdown_start_timer():
-	%CountdownStartTimer.wait_time = (randf()*6)+2
+	%CountdownStartTimer.wait_time = (randf()*6)+5
 
 func random_time_for_mom_timer():
 	%MomTimer.wait_time = (randf()*4)+1

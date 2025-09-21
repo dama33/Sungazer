@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://bhdh3u7e2fuon"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://src/world/player.tscn" id="1_o8h8f"]
-[ext_resource type="PackedScene" uid="uid://6nmxrbw28bxn" path="res://src/world/sun.tscn" id="2_4xxeg"]
+[ext_resource type="PackedScene" uid="uid://bed4h28ynrf28" path="res://src/world/sun.tscn" id="2_4xxeg"]
 
 [sub_resource type="Curve3D" id="Curve3D_4xxeg"]
 _data = {
@@ -47,8 +47,8 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1668396, 2.0134964, -2.4152832)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1668396, 0, -8.541382)
-size = Vector3(23.114685, 1, 44.03296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.60717, 0, 4.5205383)
+size = Vector3(64, 1, 115.72638)
 
 [node name="Object" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75026226, 2.5510325, -10.577169)
@@ -56,7 +56,7 @@ mesh = SubResource("SphereMesh_xhn5b")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.635, 21.923, 4.701)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.820713, 6.9230003, -17.299)
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00044822693, -0.0002975464, -0.0001487732)
@@ -66,3 +66,11 @@ shape = SubResource("ConcavePolygonShape3D_4xxeg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00044822693, -0.0002975464, -0.0001487732)
 mesh = SubResource("ArrayMesh_1e2u8")
 skeleton = NodePath("../..")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.334446, 3.5, -17.364136)
+size = Vector3(10, 6, 29.968018)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 3.5, -17.259521)
+size = Vector3(10, 6, 29.796387)
