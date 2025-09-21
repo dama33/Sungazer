@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bed4h28ynrf28"]
+[gd_scene load_steps=8 format=3 uid="uid://6nmxrbw28bxn"]
 
 [ext_resource type="Script" uid="uid://befikjo5tp80e" path="res://src/world/sun.gd" id="1_nwmkd"]
 

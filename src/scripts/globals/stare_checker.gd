@@ -31,7 +31,8 @@ func _physics_process(delta: float) -> void:
 	if not is_sun_on_screen:
 		return
 	elif is_sun_on_screen and is_sun_in_view:
-		EyeHealth.take_damage(abs(dot_product),delta)
+		var sun_screen_pos = player.player_camera.unproject_position(sun.sun_raycast.global_position)
+		EyeHealth.take_damage(abs(dot_product), sun_screen_pos, delta)
 	var is_visibility_obstructed_now = is_visibility_obstructed()
 	if is_visibility_obstructed_now and is_sun_in_view:
 		sun_exited_view.emit()
