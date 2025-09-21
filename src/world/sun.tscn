@@ -1,19 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://6nmxrbw28bxn"]
+[gd_scene load_steps=5 format=3 uid="uid://bed4h28ynrf28"]
 
 [ext_resource type="Script" uid="uid://befikjo5tp80e" path="res://src/world/sun.gd" id="1_nwmkd"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nwmkd"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_ukrvp"]
-sky_material = SubResource("ProceduralSkyMaterial_nwmkd")
-
-[sub_resource type="Environment" id="Environment_2vopr"]
-background_mode = 2
-sky = SubResource("Sky_ukrvp")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8r68"]
 albedo_color = Color(0.79607844, 0.15294118, 0.23921569, 1)
@@ -25,9 +12,6 @@ material = SubResource("StandardMaterial3D_r8r68")
 
 [node name="Sun" type="CharacterBody3D"]
 script = ExtResource("1_nwmkd")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2vopr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.50000006, -2.1855696e-08, 0, -4.371139e-08, 1, -0.50000006, 0.8660254, 3.7855173e-08, 0, 0, 0)
