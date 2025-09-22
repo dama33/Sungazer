@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhdh3u7e2fuon"]
+[gd_scene load_steps=7 format=3 uid="uid://bhdh3u7e2fuon"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://src/world/player.tscn" id="1_o8h8f"]
 [ext_resource type="PackedScene" uid="uid://bed4h28ynrf28" path="res://src/world/sun.tscn" id="2_4xxeg"]
+[ext_resource type="PackedScene" uid="uid://cq58kpdp5m8gg" path="res://src/world/mother.tscn" id="3_1e2u8"]
 
 [sub_resource type="Curve3D" id="Curve3D_4xxeg"]
 _data = {
@@ -34,6 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1668396, 2.0134964, -2.415
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5612907, 0, 4.5962906)
+use_collision = true
 size = Vector3(64, 1, 115.72638)
 
 [node name="Object" type="MeshInstance3D" parent="."]
@@ -77,16 +79,38 @@ size = Vector3(3.3058472, 7.909973, 3.8486328)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGBoxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.11565, 4.785919, 4.474243)
+use_collision = true
 size = Vector3(1, 8.966797, 115.726)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGBoxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.843506, 4.785919, 4.474243)
+use_collision = true
 size = Vector3(1, 8.966797, 115.726)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGBoxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6015377, 4.8365364, 61.832214)
+use_collision = true
 size = Vector3(64, 8.700256, 1)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGBoxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6015377, 4.8365364, -52.92756)
+use_collision = true
 size = Vector3(64, 8.700256, 1)
+
+[node name="Mother" parent="." node_paths=PackedStringArray("position_list") instance=ExtResource("3_1e2u8")]
+transform = Transform3D(3.115002, 0, 0, 0, 3.115002, 0, 0, 0, 3.1149995, 0, -17.268, -56.805)
+position_list = [NodePath("../MotherLocations/Node3D2"), NodePath("../MotherLocations/Node3D3"), NodePath("../MotherLocations/Node3D4"), NodePath("../MotherLocations/Node3D")]
+
+[node name="MotherLocations" type="Node" parent="."]
+
+[node name="Node3D2" type="Node3D" parent="MotherLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.268, -56.805)
+
+[node name="Node3D3" type="Node3D" parent="MotherLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.268, 65.272)
+
+[node name="Node3D4" type="Node3D" parent="MotherLocations"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -32.482, -17.268, 0)
+
+[node name="Node3D" type="Node3D" parent="MotherLocations"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 38.766, -17.268, 0)

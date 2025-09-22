@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq58kpdp5m8gg"]
+
+[ext_resource type="Script" uid="uid://bdvsgmlkfh5sb" path="res://src/world/mother.gd" id="1_os2te"]
+[ext_resource type="Texture2D" uid="uid://ce8opf11fkjfl" path="res://assets/mom.png" id="1_y1nkk"]
+[ext_resource type="AudioStream" uid="uid://blysxqgbm72q8" path="res://src/audio/rumble.mp3" id="3_aaksh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1nkk"]
+
+[node name="Mother" type="CharacterBody3D"]
+script = ExtResource("1_os2te")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_y1nkk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_y1nkk")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1363192, 5.1041465, 0)
+collide_with_areas = true
+debug_shape_custom_color = Color(3.2488256e-06, 0.64844716, 1.92523e-07, 1)
+
+[node name="Rumbling" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_aaksh")
+max_distance = 261.6
+bus = &"SFX"
+
+[node name="LookTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="LookTimer" to="." method="_on_look_timer_timeout"]

@@ -3,22 +3,21 @@ class_name Player
 
 var mouse_sensitivity: float = .005
 @onready var player_camera: Camera3D = $Pivot/Camera3D
-@onready var game_over_ui = preload("uid://c67s7krlh3p17")
 var FOV_DEFAULT
 
 func _ready():
 	StareChecker.register_player(self)
 	FOV_DEFAULT = player_camera.fov
-	random_time_for_mom_timer()
 	random_time_for_countdown_start_timer()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	StareChecker.sun_entered_view.connect(_temp_enter)
 	StareChecker.sun_exited_view.connect(_temp_exit)
+	StareChecker.mother_movement_end.connect(%CountdownStartTimer.start)
 
 func _physics_process(delta: float) -> void:
 	var input_direction = Input.get_vector("debug_left","debug_right","debug_forward","debug_back")
 	var direction = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
-	velocity = direction * 200 * delta
+	velocity = direction * 400 * delta
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
@@ -35,9 +34,6 @@ func _input(event: InputEvent) -> void:
 func random_time_for_countdown_start_timer():
 	%CountdownStartTimer.wait_time = (randf()*6)+5
 
-func random_time_for_mom_timer():
-	%MomTimer.wait_time = (randf()*4)+1
-
 func _temp_enter() -> void:
 	print("sun entered view")
 	%Sizzle.play()
@@ -47,17 +43,6 @@ func _temp_exit() -> void:
 	print("sun exited view")
 	%Sizzle.stop()
 
-
 func _on_countdown_start_timer_timeout() -> void:
-	%Danger.play()
+	StareChecker.mother_movement_start.emit()
 	random_time_for_countdown_start_timer()
-	%MomTimer.start()
-
-
-func _on_mom_timer_timeout() -> void:
-	%Danger.stop()
-	if StareChecker.is_looking_at_sun():
-		pass
-		#add_child(game_over_ui.instantiate())
-	random_time_for_mom_timer()
-	%CountdownStartTimer.start()
