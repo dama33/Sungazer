@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce71envgjgdg7"]
+[gd_scene load_steps=16 format=3 uid="uid://ce71envgjgdg7"]
 
 [ext_resource type="Script" uid="uid://bxkq8xydqtroa" path="res://src/main/main.gd" id="1_3eh75"]
 [ext_resource type="Texture2D" uid="uid://b2l4dyskl1ky4" path="res://assets/bottom_corner_ui/smirk.png" id="2_djufw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cbd2jymfvjfom" path="res://src/main/world_environment.gd" id="5_jkpqq"]
 [ext_resource type="Texture2D" uid="uid://c17kc3xr43xvs" path="res://assets/title_screen_mock.png" id="6_2nke2"]
 [ext_resource type="Script" uid="uid://tef0kflhy8f0" path="res://src/main/splotches_shader.gd" id="6_frqgp"]
+[ext_resource type="PackedScene" uid="uid://18j23eh1uini" path="res://src/main/end_credits_mock.tscn" id="6_km7bn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_30cu5"]
 shader = ExtResource("5_30cu5")
@@ -59,8 +60,9 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("5_2nke2")
+end_credits = ExtResource("6_km7bn")
 
-[node name="TextureRect" type="TextureRect" parent="PostProcessing/SplotchesShader/UI"]
+[node name="CharacterFace" type="TextureRect" parent="PostProcessing/SplotchesShader/UI"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
