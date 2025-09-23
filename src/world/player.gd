@@ -2,8 +2,10 @@ extends CharacterBody3D
 class_name Player
 
 var mouse_sensitivity: float = .005
-@onready var player_camera: Camera3D = $Pivot/Camera3D
+@onready var player_camera: Camera3D = %Camera3D
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 var FOV_DEFAULT
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 func _ready():
 	StareChecker.register_player(self)
@@ -18,6 +20,11 @@ func _physics_process(delta: float) -> void:
 	var input_direction = Input.get_vector("debug_left","debug_right","debug_forward","debug_back")
 	var direction = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
 	velocity = direction * 400 * delta
+	var state_machine = animation_tree["parameters/playback"]
+	if velocity.length()>0:
+		state_machine.travel("Run")
+	else:
+		state_machine.travel("Idle")
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:

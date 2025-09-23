@@ -1,27 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckudr8chj1kgo"]
+[gd_scene load_steps=11 format=3 uid="uid://ckudr8chj1kgo"]
 
 [ext_resource type="Script" uid="uid://br1seygui4q2b" path="res://src/world/player.gd" id="1_4flbx"]
 [ext_resource type="AudioStream" uid="uid://ux2r7555qvde" path="res://src/audio/SFX/sizzling.mp3" id="2_4xnbj"]
+[ext_resource type="PackedScene" uid="uid://bnyklet0wsouw" path="res://assets/GJ25_snotnosedbratIDLE.glb" id="3_xrmwb"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_cixmp"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrmwb"]
+height = 1.6796875
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xrmwb"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b7vme"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d8bhk"]
+switch_mode = 1
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sfivl"]
+advance_mode = 2
+advance_condition = &"velocity.length()>0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e2mgp"]
+advance_mode = 2
+advance_condition = &"velocity.length()==0"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ghrhr"]
+states/Idle/node = SubResource("AnimationNodeAnimation_xrmwb")
+states/Idle/position = Vector2(382, 78)
+states/Run/node = SubResource("AnimationNodeAnimation_b7vme")
+states/Run/position = Vector2(544, 95)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_d8bhk"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_sfivl"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_e2mgp")]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_cixmp")
-
-[node name="Pivot" type="Node3D" parent="."]
-unique_name_in_owner = true
-
-[node name="Camera3D" type="Camera3D" parent="Pivot"]
-current = true
-
-[node name="Sizzle" type="AudioStreamPlayer3D" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("2_4xnbj")
-volume_db = -26.408
-bus = &"Eye Burn"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52441406, 0)
+shape = SubResource("CapsuleShape3D_xrmwb")
 
 [node name="CountdownStartTimer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -29,4 +45,57 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
+[node name="GJ25_snotnosedbratIDLE" parent="." instance=ExtResource("3_xrmwb")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.3223214, 0)
+
+[node name="Skeleton3D" parent="GJ25_snotnosedbratIDLE/Armature" index="0"]
+bones/0/position = Vector3(0.07234431, 0.6700791, 0.03697763)
+bones/0/rotation = Quaternion(-0.0016800668, -0.49566945, 0.86850786, 0.0017570157)
+bones/1/rotation = Quaternion(-0.48693067, 0.0037782493, 0.0062301382, 0.8734102)
+bones/2/rotation = Quaternion(0.06485089, -0.00019484045, -0.0118352175, 0.9978248)
+bones/3/rotation = Quaternion(0.47095692, -0.0023472493, 0.00036831084, 0.8821531)
+bones/4/rotation = Quaternion(0.04106124, 0.00019763983, -0.00027122485, 0.99915665)
+bones/5/position = Vector3(-0.00044553922, 0.7547301, 0.037416764)
+bones/5/rotation = Quaternion(-0.043439887, -0.00023079113, 0.005307786, 0.9990419)
+bones/9/position = Vector3(0.1345096, 1.0456343, 0.017906545)
+bones/9/rotation = Quaternion(-0.18916409, 0.4889378, 0.82697684, -0.20314051)
+bones/10/position = Vector3(-0.0012953862, 0.10649423, -0.001351651)
+bones/10/rotation = Quaternion(-0.12016456, -0.07405783, 0.09187218, 0.9857157)
+bones/11/rotation = Quaternion(0.58941305, 0.08993583, -0.022335475, 0.8024993)
+bones/13/position = Vector3(4.3300406e-05, 0.75466174, 0.036573183)
+bones/14/position = Vector3(-0.07985921, 0.6700791, 0.03714006)
+bones/14/rotation = Quaternion(0.0022927357, 0.6841543, 0.72933304, 0.001044792)
+bones/15/rotation = Quaternion(-0.5394328, -0.0042032953, -0.0056825173, 0.841999)
+bones/17/rotation = Quaternion(0.70620584, 0.010025682, -0.011471043, 0.7078427)
+bones/19/position = Vector3(-0.14202444, 1.0456343, 0.018068956)
+bones/19/rotation = Quaternion(0.13476974, -0.62021446, 0.75520736, 0.1638084)
+bones/20/position = Vector3(0.0012952874, 0.106494255, -0.0013515576)
+bones/20/rotation = Quaternion(-0.12016459, 0.07405779, -0.09187215, 0.9857157)
+bones/21/rotation = Quaternion(0.5626245, -0.01551059, 0.23951693, 0.7911036)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../GJ25_snotnosedbratIDLE")
+tree_root = SubResource("AnimationNodeStateMachine_ghrhr")
+anim_player = NodePath("../GJ25_snotnosedbratIDLE/AnimationPlayer")
+"parameters/conditions/velocity.length()==0" = false
+parameters/conditions/velocity.length()>0 = false
+
+[node name="Pivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SpringArm" type="SpringArm3D" parent="Pivot"]
+spring_length = 2.204
+
+[node name="Camera3D" type="Camera3D" parent="Pivot/SpringArm"]
+unique_name_in_owner = true
+current = true
+
+[node name="Sizzle" type="AudioStreamPlayer3D" parent="Pivot/SpringArm/Camera3D"]
+unique_name_in_owner = true
+stream = ExtResource("2_4xnbj")
+volume_db = -26.408
+bus = &"Eye Burn"
+
 [connection signal="timeout" from="CountdownStartTimer" to="." method="_on_countdown_start_timer_timeout"]
+
+[editable path="GJ25_snotnosedbratIDLE"]

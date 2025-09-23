@@ -24,7 +24,7 @@ func _ready() -> void:
 ## Check every frame if the sun has become obstructed or was obstructed and is
 ## no longer.
 func _physics_process(delta: float) -> void:
-	var dot_product = player.player_camera.global_transform.basis.z.dot(player.player_camera.global_position.direction_to(sun.sun_raycast.global_position))
+	var dot_product = player.player_camera.global_transform.basis.z.dot(player.collision_shape.global_position.direction_to(sun.sun_raycast.global_position))
 	
 	#IF YOU WANT TO TEST WITHOUT THE ZOOM IN AND ENERGY, COMMENT OUT THESE LINES
 	#visual_sun_effects(dot_product)
@@ -80,10 +80,9 @@ func register_player(init_player: Player) -> void:
 ## Checks if there is a line of sight between the player and the sun. Returns
 ## true if the player can see the sun.
 func is_visibility_obstructed(raycast: RayCast3D) -> bool:
-	raycast.target_position = raycast.to_local(player.player_camera.global_position)
+	raycast.target_position = raycast.to_local(player.collision_shape.global_position)
 	raycast.force_raycast_update()
 	return raycast.get_collider() is not Player
-
 
 func _on_notifier_entered_screen() -> void:
 	is_sun_on_screen = true

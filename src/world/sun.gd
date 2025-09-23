@@ -10,6 +10,6 @@ func _ready() -> void:
 	StareChecker.register_sun(self)
 	
 func _process(delta:float): 
-	$DirectionalLight3D.look_at(StareChecker.player.player_camera.global_position)
+	$DirectionalLight3D.look_at(StareChecker.player.collision_shape.global_position)
 	if parent is PathFollow3D:
 		parent.set_progress(parent.get_progress() + (10 * delta))

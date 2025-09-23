@@ -122,6 +122,7 @@ unique_name_in_owner = true
 stream = ExtResource("10_erw1m")
 volume_db = -19.803
 autoplay = true
+bus = &"Music"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jkpqq")

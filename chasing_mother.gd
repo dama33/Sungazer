@@ -10,10 +10,10 @@ func _ready():
 func actor_setup():
 	await get_tree().physics_frame
 	print(StareChecker.player.position)
-	set_movement_target(StareChecker.player.global_position)
+	set_movement_target(StareChecker.player.collision_shape.global_position)
 	
 func _physics_process(_delta: float) -> void:
-	set_movement_target(StareChecker.player.global_position)
+	set_movement_target(StareChecker.player.collision_shape.global_position)
 	
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
