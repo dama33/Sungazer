@@ -17,7 +17,7 @@ enum State{
 
 func _ready() -> void:
 	state = State.IDLE
-	StareChecker.mother_movement_start.connect(_mother_movement_start)
+	SignalBus.mother_movement_start.connect(_mother_movement_start)
 	set_physics_process(false)
 	
 func _physics_process(delta: float) -> void:
@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		%LookTimer.start()
 	elif state == State.GOING_DOWN && abs(position.y+17.26) < 0.001:
 		%Rumbling.stop()
-		StareChecker.mother_movement_end.emit()
+		SignalBus.mother_movement_end.emit()
 		set_physics_process(false)
 
 func _process(_delta: float) -> void:

@@ -12,7 +12,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	StareChecker.sun_entered_view.connect(_temp_enter)
 	StareChecker.sun_exited_view.connect(_temp_exit)
-	StareChecker.mother_movement_end.connect(%CountdownStartTimer.start)
+	SignalBus.mother_movement_end.connect(%CountdownStartTimer.start)
 
 func _physics_process(delta: float) -> void:
 	var input_direction = Input.get_vector("debug_left","debug_right","debug_forward","debug_back")
@@ -44,5 +44,5 @@ func _temp_exit() -> void:
 	%Sizzle.stop()
 
 func _on_countdown_start_timer_timeout() -> void:
-	StareChecker.mother_movement_start.emit()
+	SignalBus.mother_movement_start.emit()
 	random_time_for_countdown_start_timer()

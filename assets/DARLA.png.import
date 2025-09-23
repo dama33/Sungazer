@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce8opf11fkjfl"
-path.s3tc="res://.godot/imported/mom.png-c5d90f901400d8088143cd6d7d221b80.s3tc.ctex"
+uid="uid://drm4j6iea0nbr"
+path.s3tc="res://.godot/imported/DARLA.png-58eeff27ff9da7eeb4280099ca28801d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/mom.png"
-dest_files=["res://.godot/imported/mom.png-c5d90f901400d8088143cd6d7d221b80.s3tc.ctex"]
+source_file="res://assets/DARLA.png"
+dest_files=["res://.godot/imported/DARLA.png-58eeff27ff9da7eeb4280099ca28801d.s3tc.ctex"]
 
 [params]
 

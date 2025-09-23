@@ -6,11 +6,7 @@ extends Node
 
 signal sun_entered_view
 signal sun_exited_view
-@warning_ignore("unused_signal")
-signal mother_movement_start
 
-@warning_ignore("unused_signal")
-signal mother_movement_end
 
 
 var sun_on_screen_notifier: VisibleOnScreenNotifier3D = null

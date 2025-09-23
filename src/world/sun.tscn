@@ -25,10 +25,10 @@ aabb = AABB(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 unique_name_in_owner = true
-collide_with_areas = true
 debug_shape_custom_color = Color(3.2488256e-06, 0.64844716, 1.92523e-07, 1)
 
 [node name="DebugMesh" type="MeshInstance3D" parent="."]
+visible = false
 layers = 524288
 mesh = SubResource("SphereMesh_xhn5b")
 skeleton = NodePath("")

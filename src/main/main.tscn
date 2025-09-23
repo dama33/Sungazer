@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2l4dyskl1ky4" path="res://assets/bottom_corner_ui/smirk.png" id="2_djufw"]
 [ext_resource type="PackedScene" uid="uid://bhdh3u7e2fuon" path="res://src/world/whitebox.tscn" id="3_djufw"]
 [ext_resource type="Script" uid="uid://coaejx18pi1lm" path="res://src/main/character_face_ui.gd" id="3_jkpqq"]
-[ext_resource type="Script" uid="uid://diia06w2dsb1h" path="res://src/main/ui.gd" id="5_2nke2"]
+[ext_resource type="Script" path="res://src/main/ui.gd" id="5_2nke2"]
 [ext_resource type="Shader" uid="uid://bd23iikj2m4xp" path="res://src/main/sun_splotches.gdshader" id="5_30cu5"]
 [ext_resource type="Script" uid="uid://cbd2jymfvjfom" path="res://src/main/world_environment.gd" id="5_jkpqq"]
 [ext_resource type="Texture2D" uid="uid://c17kc3xr43xvs" path="res://assets/title_screen_mock.png" id="6_2nke2"]
