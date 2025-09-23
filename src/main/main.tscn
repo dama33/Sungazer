@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ce71envgjgdg7"]
+[gd_scene load_steps=17 format=3 uid="uid://ce71envgjgdg7"]
 
 [ext_resource type="Script" uid="uid://bxkq8xydqtroa" path="res://src/main/main.gd" id="1_3eh75"]
 [ext_resource type="Texture2D" uid="uid://b2l4dyskl1ky4" path="res://assets/bottom_corner_ui/smirk.png" id="2_djufw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c17kc3xr43xvs" path="res://assets/title_screen_mock.png" id="6_2nke2"]
 [ext_resource type="Script" uid="uid://tef0kflhy8f0" path="res://src/main/splotches_shader.gd" id="6_frqgp"]
 [ext_resource type="PackedScene" uid="uid://18j23eh1uini" path="res://src/main/end_credits_mock.tscn" id="6_km7bn"]
+[ext_resource type="AudioStream" uid="uid://bt6mhldu8wi5j" path="res://src/audio/Music/sun gazers main theme.wav" id="10_erw1m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_30cu5"]
 shader = ExtResource("5_30cu5")
@@ -116,6 +117,11 @@ expand_mode = 1
 
 [node name="World" type="Node3D" parent="."]
 unique_name_in_owner = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="World"]
+stream = ExtResource("10_erw1m")
+volume_db = -19.803
+autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jkpqq")

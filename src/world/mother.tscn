@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdvsgmlkfh5sb" path="res://src/world/mother.gd" id="1_os2te"]
 [ext_resource type="Texture2D" uid="uid://ce8opf11fkjfl" path="res://assets/mom.png" id="1_y1nkk"]
-[ext_resource type="AudioStream" uid="uid://blysxqgbm72q8" path="res://src/audio/rumble.mp3" id="3_aaksh"]
+[ext_resource type="AudioStream" uid="uid://blysxqgbm72q8" path="res://src/audio/SFX/rumble.mp3" id="3_aaksh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1nkk"]
 
