@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://ce71envgjgdg7"]
 
 [ext_resource type="Script" uid="uid://bxkq8xydqtroa" path="res://src/main/main.gd" id="1_3eh75"]
-[ext_resource type="Texture2D" uid="uid://b2l4dyskl1ky4" path="res://assets/bottom_corner_ui/smirk.png" id="2_djufw"]
 [ext_resource type="PackedScene" uid="uid://bhdh3u7e2fuon" path="res://src/world/whitebox.tscn" id="3_djufw"]
-[ext_resource type="Script" uid="uid://coaejx18pi1lm" path="res://src/main/character_face_ui.gd" id="3_jkpqq"]
-[ext_resource type="Script" path="res://src/main/ui.gd" id="5_2nke2"]
+[ext_resource type="Script" uid="uid://diia06w2dsb1h" path="res://src/main/ui.gd" id="5_2nke2"]
 [ext_resource type="Shader" uid="uid://bd23iikj2m4xp" path="res://src/main/sun_splotches.gdshader" id="5_30cu5"]
 [ext_resource type="Script" uid="uid://cbd2jymfvjfom" path="res://src/main/world_environment.gd" id="5_jkpqq"]
 [ext_resource type="Texture2D" uid="uid://c17kc3xr43xvs" path="res://assets/title_screen_mock.png" id="6_2nke2"]
 [ext_resource type="Script" uid="uid://tef0kflhy8f0" path="res://src/main/splotches_shader.gd" id="6_frqgp"]
 [ext_resource type="PackedScene" uid="uid://18j23eh1uini" path="res://src/main/end_credits_mock.tscn" id="6_km7bn"]
+[ext_resource type="PackedScene" uid="uid://cbwehrgqexwum" path="res://src/ui/kid_expressions.tscn" id="8_km7bn"]
+[ext_resource type="PackedScene" uid="uid://bxxjtka4w0uaf" path="res://src/ui/blindness_dial.tscn" id="9_erw1m"]
 [ext_resource type="AudioStream" uid="uid://bt6mhldu8wi5j" path="res://src/audio/Music/sun gazers main theme.wav" id="10_erw1m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_30cu5"]
@@ -63,20 +63,18 @@ size_flags_vertical = 3
 script = ExtResource("5_2nke2")
 end_credits = ExtResource("6_km7bn")
 
-[node name="CharacterFace" type="TextureRect" parent="PostProcessing/SplotchesShader/UI"]
+[node name="BlindnessDial" parent="PostProcessing/SplotchesShader/UI" instance=ExtResource("9_erw1m")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -200.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("2_djufw")
-expand_mode = 3
-script = ExtResource("3_jkpqq")
+offset_left = 693.0
+offset_top = 720.0
+offset_right = -587.0
+
+[node name="KidExpressions" parent="PostProcessing/SplotchesShader/UI" instance=ExtResource("8_km7bn")]
+layout_mode = 1
+offset_left = 1408.0
+offset_top = 568.0
+offset_right = -512.0
+offset_bottom = -512.0
 
 [node name="OnwardButton" type="Button" parent="PostProcessing/SplotchesShader/UI"]
 layout_mode = 1

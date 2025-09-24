@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://nlc88bvtxysq"]
+
+[ext_resource type="Texture2D" uid="uid://b0twv62tcbgc8" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_001.png" id="1_xkcwi"]
+[ext_resource type="Texture2D" uid="uid://gf5224mt3iic" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_002.png" id="2_q7ycx"]
+[ext_resource type="Texture2D" uid="uid://d1csyvurqporh" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_003.png" id="3_q26vs"]
+[ext_resource type="Texture2D" uid="uid://db0msgfrlt7us" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_004.png" id="4_v4qk6"]
+[ext_resource type="Texture2D" uid="uid://bigxjx1guxx61" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_005.png" id="5_1ih2k"]
+[ext_resource type="Texture2D" uid="uid://do7m1g2wmkalv" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_006.png" id="6_ij6t5"]
+[ext_resource type="Texture2D" uid="uid://bwjrdfdfvoodn" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_007.png" id="7_x3oae"]
+[ext_resource type="Texture2D" uid="uid://btywbe8j5p2dl" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_008.png" id="8_6hcqn"]
+[ext_resource type="Texture2D" uid="uid://1un7k08emasr" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_009.png" id="9_x5lm4"]
+[ext_resource type="Texture2D" uid="uid://c6tl3sr547yjq" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_010.png" id="10_vrenr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xkcwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q7ycx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q26vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v4qk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1ih2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ij6t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x3oae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6hcqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x5lm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vrenr")
+}],
+"loop": true,
+"name": &"staring",
+"speed": 5.0
+}]

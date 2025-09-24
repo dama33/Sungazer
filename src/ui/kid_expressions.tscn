@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbwehrgqexwum"]
+[gd_scene load_steps=3 format=3 uid="uid://cbwehrgqexwum"]
 
-[ext_resource type="Texture2D" uid="uid://chcf3wkld8ufi" path="res://assets/kid_expression_animations/caught/caught_animated_texture.tres" id="1_vr0ph"]
+[ext_resource type="Script" uid="uid://dhh6je5774e2t" path="res://src/ui/kid_expressions.gd" id="1_s6qog"]
+[ext_resource type="SpriteFrames" uid="uid://dgdlex110j73c" path="res://src/ui/kid_expression_sprite_frames.tres" id="2_poxet"]
 
 [node name="KidExpressions" type="Control"]
 layout_mode = 3
@@ -11,14 +12,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_s6qog")
 
-[node name="Caught" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_vr0ph")
-expand_mode = 1
-stretch_mode = 4
+[node name="ExpressionAnimation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = ExtResource("2_poxet")
+animation = &"normal"
+centered = false

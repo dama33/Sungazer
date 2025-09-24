@@ -1,0 +1,321 @@
+[gd_resource type="SpriteFrames" load_steps=75 format=3 uid="uid://dgdlex110j73c"]
+
+[ext_resource type="Texture2D" uid="uid://dtc7px6yru7t8" path="res://assets/kid_expression_animations/caught/Kid caught look_001.png" id="1_i15hy"]
+[ext_resource type="Texture2D" uid="uid://dnlvicvqrpllw" path="res://assets/kid_expression_animations/caught/Kid caught look_002.png" id="2_1vtlo"]
+[ext_resource type="Texture2D" uid="uid://dtjxo2100g3uw" path="res://assets/kid_expression_animations/caught/Kid caught look_003.png" id="3_luo0o"]
+[ext_resource type="Texture2D" uid="uid://uarus8vuo1xe" path="res://assets/kid_expression_animations/caught/Kid caught look_004.png" id="4_yev2y"]
+[ext_resource type="Texture2D" uid="uid://b5y4lo7fv1v1x" path="res://assets/kid_expression_animations/caught/Kid caught look_005.png" id="5_elfli"]
+[ext_resource type="Texture2D" uid="uid://cs067vhii8gsh" path="res://assets/kid_expression_animations/caught/Kid caught look_006.png" id="6_0wpn5"]
+[ext_resource type="Texture2D" uid="uid://bnmasp6sd3pne" path="res://assets/kid_expression_animations/caught/Kid caught look_007.png" id="7_ddywb"]
+[ext_resource type="Texture2D" uid="uid://dw5utqdnfij56" path="res://assets/kid_expression_animations/caught/Kid caught look_008.png" id="8_fh604"]
+[ext_resource type="Texture2D" uid="uid://bosvusdthr74i" path="res://assets/kid_expression_animations/caught/Kid caught look_009.png" id="9_vy8r8"]
+[ext_resource type="Texture2D" uid="uid://cn6ykph3rgx14" path="res://assets/kid_expression_animations/caught/Kid caught look_010.png" id="10_fnbih"]
+[ext_resource type="Texture2D" uid="uid://hkoo6folahth" path="res://assets/kid_expression_animations/caught/Kid caught look_011.png" id="11_nnjbl"]
+[ext_resource type="Texture2D" uid="uid://8di3jhoqgxr6" path="res://assets/kid_expression_animations/caught/Kid caught look_012.png" id="12_0m32y"]
+[ext_resource type="Texture2D" uid="uid://br1tnedn16ah0" path="res://assets/kid_expression_animations/caught/Kid caught look_013.png" id="13_da0k0"]
+[ext_resource type="Texture2D" uid="uid://cwl7fl3d3b1p5" path="res://assets/kid_expression_animations/caught/Kid caught look_014.png" id="14_1leac"]
+[ext_resource type="Texture2D" uid="uid://dhdb8nlvo7jft" path="res://assets/kid_expression_animations/caught/Kid caught look_015.png" id="15_kg1mp"]
+[ext_resource type="Texture2D" uid="uid://bm4dvr42xgcxy" path="res://assets/kid_expression_animations/caught/Kid caught look_016.png" id="16_7jc47"]
+[ext_resource type="Texture2D" uid="uid://dxkk8oggg8k2m" path="res://assets/kid_expression_animations/caught/Kid caught look_017.png" id="17_4ibx5"]
+[ext_resource type="Texture2D" uid="uid://cs21qbrkbkwrh" path="res://assets/kid_expression_animations/caught/Kid caught look_018.png" id="18_tpjpf"]
+[ext_resource type="Texture2D" uid="uid://der4xj0522njj" path="res://assets/kid_expression_animations/caught/Kid caught look_019.png" id="19_o6gqc"]
+[ext_resource type="Texture2D" uid="uid://bwmspc3ieu60e" path="res://assets/kid_expression_animations/caught/Kid caught look_020.png" id="20_8yxfj"]
+[ext_resource type="Texture2D" uid="uid://dim5i2x6pyppu" path="res://assets/kid_expression_animations/normal/Kid normal look_001.png" id="21_xdv74"]
+[ext_resource type="Texture2D" uid="uid://n0xmvq1ykdqe" path="res://assets/kid_expression_animations/normal/Kid normal look_002.png" id="22_t0b3a"]
+[ext_resource type="Texture2D" uid="uid://bjb3sudhwyaqk" path="res://assets/kid_expression_animations/normal/Kid normal look_003.png" id="23_d7cqb"]
+[ext_resource type="Texture2D" uid="uid://73ib1enmtnu5" path="res://assets/kid_expression_animations/normal/Kid normal look_004.png" id="24_xyeym"]
+[ext_resource type="Texture2D" uid="uid://b6ktqq67jvf0c" path="res://assets/kid_expression_animations/normal/Kid normal look_005.png" id="25_ix8fe"]
+[ext_resource type="Texture2D" uid="uid://cc8cmurwqkmbj" path="res://assets/kid_expression_animations/normal/Kid normal look_006.png" id="26_3px0v"]
+[ext_resource type="Texture2D" uid="uid://cs1hn86rp7gjc" path="res://assets/kid_expression_animations/normal/Kid normal look_007.png" id="27_6qyi5"]
+[ext_resource type="Texture2D" uid="uid://bb6washkrmxp1" path="res://assets/kid_expression_animations/normal/Kid normal look_008.png" id="28_pjwnw"]
+[ext_resource type="Texture2D" uid="uid://cm4wh7vwd8isn" path="res://assets/kid_expression_animations/normal/Kid normal look_009.png" id="29_xk1od"]
+[ext_resource type="Texture2D" uid="uid://dugq2abmoyyo2" path="res://assets/kid_expression_animations/normal/Kid normal look_010.png" id="30_q6kut"]
+[ext_resource type="Texture2D" uid="uid://b317c4rue0v2u" path="res://assets/kid_expression_animations/normal/Kid normal look_011.png" id="31_qjb3f"]
+[ext_resource type="Texture2D" uid="uid://cgyufqr12eshm" path="res://assets/kid_expression_animations/normal/Kid normal look_012.png" id="32_5fuis"]
+[ext_resource type="Texture2D" uid="uid://bmu4iheh381r7" path="res://assets/kid_expression_animations/normal/Kid normal look_013.png" id="33_wk1o2"]
+[ext_resource type="Texture2D" uid="uid://bdoppiu8fydgs" path="res://assets/kid_expression_animations/normal/Kid normal look_014.png" id="34_k5due"]
+[ext_resource type="Texture2D" uid="uid://bhosflbvrqw08" path="res://assets/kid_expression_animations/normal/Kid normal look_015.png" id="35_tii72"]
+[ext_resource type="Texture2D" uid="uid://coee4hwe2l7er" path="res://assets/kid_expression_animations/normal/Kid normal look_016.png" id="36_t8yad"]
+[ext_resource type="Texture2D" uid="uid://btr2xge8qsgge" path="res://assets/kid_expression_animations/normal/Kid normal look_017.png" id="37_rg2ha"]
+[ext_resource type="Texture2D" uid="uid://da656px4o8jnp" path="res://assets/kid_expression_animations/normal/Kid normal look_018.png" id="38_5au5s"]
+[ext_resource type="Texture2D" uid="uid://cy8le2kbxhq8m" path="res://assets/kid_expression_animations/normal/Kid normal look_019.png" id="39_qibek"]
+[ext_resource type="Texture2D" uid="uid://d3drth2if7en4" path="res://assets/kid_expression_animations/normal/Kid normal look_020.png" id="40_hcexy"]
+[ext_resource type="Texture2D" uid="uid://doru5regxvl7c" path="res://assets/kid_expression_animations/normal/Kid normal look_021.png" id="41_5qqla"]
+[ext_resource type="Texture2D" uid="uid://ba7ui5qlemggm" path="res://assets/kid_expression_animations/normal/Kid normal look_022.png" id="42_ogi68"]
+[ext_resource type="Texture2D" uid="uid://p8i60xweusef" path="res://assets/kid_expression_animations/normal/Kid normal look_023.png" id="43_5rnhc"]
+[ext_resource type="Texture2D" uid="uid://x1lclqu8w585" path="res://assets/kid_expression_animations/normal/Kid normal look_024.png" id="44_8p55f"]
+[ext_resource type="Texture2D" uid="uid://wfblsgqugx1n" path="res://assets/kid_expression_animations/normal/Kid normal look_025.png" id="45_sljas"]
+[ext_resource type="Texture2D" uid="uid://mq6x7qvpeesb" path="res://assets/kid_expression_animations/normal/Kid normal look_026.png" id="46_kihk3"]
+[ext_resource type="Texture2D" uid="uid://dg4gw385acjh8" path="res://assets/kid_expression_animations/normal/Kid normal look_027.png" id="47_35ep8"]
+[ext_resource type="Texture2D" uid="uid://dm1ma3bohsa4j" path="res://assets/kid_expression_animations/normal/Kid normal look_028.png" id="48_jcyrx"]
+[ext_resource type="Texture2D" uid="uid://vj05iwa1k51n" path="res://assets/kid_expression_animations/normal/Kid normal look_029.png" id="49_lnvxm"]
+[ext_resource type="Texture2D" uid="uid://brfjdfgmf3eyc" path="res://assets/kid_expression_animations/normal/Kid normal look_030.png" id="50_34tur"]
+[ext_resource type="Texture2D" uid="uid://dkqbacmiutjnd" path="res://assets/kid_expression_animations/normal/Kid normal look_031.png" id="51_y7fwg"]
+[ext_resource type="Texture2D" uid="uid://jucyr4b6rq8i" path="res://assets/kid_expression_animations/normal/Kid normal look_032.png" id="52_8o6m5"]
+[ext_resource type="Texture2D" uid="uid://b0twv62tcbgc8" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_001.png" id="53_on783"]
+[ext_resource type="Texture2D" uid="uid://gf5224mt3iic" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_002.png" id="54_i0ivt"]
+[ext_resource type="Texture2D" uid="uid://d1csyvurqporh" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_003.png" id="55_fpr8y"]
+[ext_resource type="Texture2D" uid="uid://db0msgfrlt7us" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_004.png" id="56_anaq1"]
+[ext_resource type="Texture2D" uid="uid://bigxjx1guxx61" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_005.png" id="57_pcks2"]
+[ext_resource type="Texture2D" uid="uid://do7m1g2wmkalv" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_006.png" id="58_4asdj"]
+[ext_resource type="Texture2D" uid="uid://bwjrdfdfvoodn" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_007.png" id="59_kccwy"]
+[ext_resource type="Texture2D" uid="uid://btywbe8j5p2dl" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_008.png" id="60_ybp0u"]
+[ext_resource type="Texture2D" uid="uid://1un7k08emasr" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_009.png" id="61_7wadn"]
+[ext_resource type="Texture2D" uid="uid://c6tl3sr547yjq" path="res://assets/kid_expression_animations/staring_at_sun/Kid staring at sun_010.png" id="62_g8edt"]
+[ext_resource type="Texture2D" uid="uid://vrpof7v4see1" path="res://assets/kid_expression_animations/worried/Kid worried look_001.png" id="63_tapet"]
+[ext_resource type="Texture2D" uid="uid://8ow5nbbhq6x1" path="res://assets/kid_expression_animations/worried/Kid worried look_002.png" id="64_5mvbj"]
+[ext_resource type="Texture2D" uid="uid://dllwco1wmw1ub" path="res://assets/kid_expression_animations/worried/Kid worried look_003.png" id="65_n2wlm"]
+[ext_resource type="Texture2D" uid="uid://cfbo24kpdj1er" path="res://assets/kid_expression_animations/worried/Kid worried look_004.png" id="66_ewg0t"]
+[ext_resource type="Texture2D" uid="uid://cushga0sfcn7b" path="res://assets/kid_expression_animations/worried/Kid worried look_005.png" id="67_t5w1w"]
+[ext_resource type="Texture2D" uid="uid://26eqx4xqemvh" path="res://assets/kid_expression_animations/worried/Kid worried look_006.png" id="68_w1146"]
+[ext_resource type="Texture2D" uid="uid://faqr6ulde1ky" path="res://assets/kid_expression_animations/worried/Kid worried look_007.png" id="69_seckj"]
+[ext_resource type="Texture2D" uid="uid://camdm6w4t20mi" path="res://assets/kid_expression_animations/worried/Kid worried look_008.png" id="70_7yoho"]
+[ext_resource type="Texture2D" uid="uid://74n2prc6j2vx" path="res://assets/kid_expression_animations/worried/Kid worried look_009.png" id="71_yj2m2"]
+[ext_resource type="Texture2D" uid="uid://b38j8w6nehivp" path="res://assets/kid_expression_animations/worried/Kid worried look_010.png" id="72_kut0f"]
+[ext_resource type="Texture2D" uid="uid://bwv0kyv2v3lgt" path="res://assets/kid_expression_animations/worried/Kid worried look_011.png" id="73_31mn5"]
+[ext_resource type="Texture2D" uid="uid://bs17ss2abn7rd" path="res://assets/kid_expression_animations/worried/Kid worried look_012.png" id="74_4qxpt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i15hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1vtlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_luo0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yev2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_elfli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0wpn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ddywb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fh604")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vy8r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fnbih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nnjbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0m32y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_da0k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1leac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kg1mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7jc47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4ibx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tpjpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_o6gqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8yxfj")
+}],
+"loop": true,
+"name": &"caught",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xdv74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_t0b3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_d7cqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xyeym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ix8fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3px0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6qyi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pjwnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_xk1od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_q6kut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qjb3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_5fuis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wk1o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_k5due")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_tii72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_t8yad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rg2ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_5au5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_qibek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hcexy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_5qqla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ogi68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_5rnhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_8p55f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_sljas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_kihk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_35ep8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_jcyrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_lnvxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_34tur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_y7fwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_8o6m5")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_on783")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_i0ivt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_fpr8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_anaq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_pcks2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_4asdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_kccwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ybp0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_7wadn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_g8edt")
+}],
+"loop": true,
+"name": &"staring",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_tapet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_5mvbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_n2wlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ewg0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_t5w1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_w1146")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_seckj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_7yoho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_yj2m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_kut0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_31mn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_4qxpt")
+}],
+"loop": true,
+"name": &"worried",
+"speed": 5.0
+}]

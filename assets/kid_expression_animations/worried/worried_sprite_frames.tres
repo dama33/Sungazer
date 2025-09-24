@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://b56ri8rw1x1la"]
+
+[ext_resource type="Texture2D" uid="uid://vrpof7v4see1" path="res://assets/kid_expression_animations/worried/Kid worried look_001.png" id="1_qd43r"]
+[ext_resource type="Texture2D" uid="uid://8ow5nbbhq6x1" path="res://assets/kid_expression_animations/worried/Kid worried look_002.png" id="2_qol6v"]
+[ext_resource type="Texture2D" uid="uid://dllwco1wmw1ub" path="res://assets/kid_expression_animations/worried/Kid worried look_003.png" id="3_0rrhq"]
+[ext_resource type="Texture2D" uid="uid://cfbo24kpdj1er" path="res://assets/kid_expression_animations/worried/Kid worried look_004.png" id="4_rxqn1"]
+[ext_resource type="Texture2D" uid="uid://cushga0sfcn7b" path="res://assets/kid_expression_animations/worried/Kid worried look_005.png" id="5_o0kl0"]
+[ext_resource type="Texture2D" uid="uid://26eqx4xqemvh" path="res://assets/kid_expression_animations/worried/Kid worried look_006.png" id="6_muhtp"]
+[ext_resource type="Texture2D" uid="uid://faqr6ulde1ky" path="res://assets/kid_expression_animations/worried/Kid worried look_007.png" id="7_tnh2g"]
+[ext_resource type="Texture2D" uid="uid://camdm6w4t20mi" path="res://assets/kid_expression_animations/worried/Kid worried look_008.png" id="8_37kl6"]
+[ext_resource type="Texture2D" uid="uid://74n2prc6j2vx" path="res://assets/kid_expression_animations/worried/Kid worried look_009.png" id="9_ttb5r"]
+[ext_resource type="Texture2D" uid="uid://b38j8w6nehivp" path="res://assets/kid_expression_animations/worried/Kid worried look_010.png" id="10_yxj1v"]
+[ext_resource type="Texture2D" uid="uid://bwv0kyv2v3lgt" path="res://assets/kid_expression_animations/worried/Kid worried look_011.png" id="11_0rhhm"]
+[ext_resource type="Texture2D" uid="uid://bs17ss2abn7rd" path="res://assets/kid_expression_animations/worried/Kid worried look_012.png" id="12_sm20c"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qd43r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qol6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0rrhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rxqn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o0kl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_muhtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tnh2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_37kl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ttb5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yxj1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0rhhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sm20c")
+}],
+"loop": true,
+"name": &"worried",
+"speed": 10.0
+}]
