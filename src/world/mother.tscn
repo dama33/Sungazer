@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drm4j6iea0nbr" path="res://assets/DARLA.png" id="2_os2te"]
 [ext_resource type="AudioStream" uid="uid://blysxqgbm72q8" path="res://src/audio/SFX/rumble.mp3" id="3_aaksh"]
 
-[node name="Mother" type="CharacterBody3D"]
+[node name="Mother" type="Node3D"]
 script = ExtResource("1_os2te")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

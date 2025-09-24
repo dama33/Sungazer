@@ -2,11 +2,14 @@ extends Control
 
 
 @export var end_credits: PackedScene
+var game_over_ui: PackedScene = preload("uid://c67s7krlh3p17")
 
 
 func _ready() -> void:
 	$OnwardButton.pressed.connect(_on_onward_pressed)
 	$QuitButton.pressed.connect(_on_quit_pressed)
+	SignalBus.game_over.connect(_game_over)
+	SignalBus.start_game.emit.call_deferred()
 
 
 func load_game() -> void:
@@ -25,6 +28,8 @@ func show_victory_screen() -> void:
 func _on_onward_pressed() -> void:
 	SignalBus.start_game.emit()
 
-
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+	
+func _game_over():
+	add_child(game_over_ui.instantiate())

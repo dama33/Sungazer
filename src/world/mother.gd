@@ -1,10 +1,9 @@
-extends CharacterBody3D
+extends Node3D
 class_name Mother
 
 var mother_speed = 10
 var target_position: Vector3
 var state: State
-var game_over_ui: PackedScene = preload("uid://c67s7krlh3p17")
 @export var position_list: Array[Node3D]
 var current_index:int
 
@@ -38,7 +37,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	if  state == State.LOOKING && !StareChecker.is_visibility_obstructed(%RayCast3D):
-		add_child(game_over_ui.instantiate())
+		SignalBus.game_over.emit()
 
 func _mother_movement_start():
 	current_index = randi() % 4
