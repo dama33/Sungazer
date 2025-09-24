@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://18j23eh1uini"]
+
+[ext_resource type="Script" uid="uid://pp6o8ox3tw2x" path="res://src/ui/end_credits.gd" id="1_60w7m"]
+[ext_resource type="Texture2D" uid="uid://b13lrulxfvthg" path="res://assets/end_credits/Screen.png" id="2_eoyti"]
+[ext_resource type="Texture2D" uid="uid://bddjlvx47uaxa" path="res://assets/end_credits/Just glasses.png" id="3_aaden"]
+[ext_resource type="FontFile" uid="uid://ckcjp87ic1lur" path="res://assets/basic_font.otf" id="4_o2u55"]
+
+[node name="EndCredits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_60w7m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eoyti")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Glasses" type="Sprite2D" parent="."]
+position = Vector2(775, 538)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("3_aaden")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1015.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_o2u55")
+theme_override_font_sizes/font_size = 60
+text = "3D Art
+Melissa
+Fellow / Elbow?
+
+2D Art
+Mo
+Ashlynne
+
+Programming
+Adam
+Dallas
+
+Audio
+Devin
+Bennett"
+horizontal_alignment = 1
+vertical_alignment = 1

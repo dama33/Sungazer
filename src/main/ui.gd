@@ -20,7 +20,6 @@ func show_victory_screen() -> void:
 		child.queue_free()
 	var end_credits_scene = end_credits.instantiate()
 	add_child(end_credits_scene)
-	end_credits_scene.find_child("CreditsAnimation").play("credits")
 
 
 func _on_onward_pressed() -> void:
