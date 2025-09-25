@@ -1,9 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dupp1uoxoo1pe"]
+[gd_scene load_steps=10 format=3 uid="uid://dupp1uoxoo1pe"]
 
 [ext_resource type="Texture2D" uid="uid://drm4j6iea0nbr" path="res://assets/DARLA.png" id="1_fgvrl"]
 [ext_resource type="Script" uid="uid://cg10847t75ou3" path="res://src/world/inside_house.gd" id="1_njatf"]
 [ext_resource type="PackedScene" uid="uid://22tlww7na263" path="res://src/world/test_whiteboard.tscn" id="2_oyqn4"]
-[ext_resource type="Texture2D" uid="uid://cgknxb1owsw1n" path="res://assets/eye-test-chart-rings-chart-vision-exam-optometrist-check-medical-eye-diagnostic-sight-eyesight-optical-examination-illustration-vector.jpg" id="4_7ijhu"]
+
+[sub_resource type="Curve3D" id="Curve3D_njatf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.213, -4.64),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyqn4"]
 
@@ -17,6 +23,9 @@ albedo_color = Color(0.7463924, 0.49021932, 0.2922033, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_u15wj"]
 material = SubResource("StandardMaterial3D_7ijhu")
 size = Vector3(0.5, 3, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_njatf"]
+viewport_path = NodePath("MeshInstance3D/Sprite3D/SubViewport")
 
 [node name="Inside House" type="Node3D"]
 script = ExtResource("1_njatf")
@@ -45,8 +54,16 @@ size = Vector3(10.776123, 1, 12.261688)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4.904, -5.636)
 size = Vector3(10.776123, 1, 10.784206)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6337476, 2.8818917)
+curve = SubResource("Curve3D_njatf")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+unique_name_in_owner = true
+transform = Transform3D(0.9999986, 0, 0, 0, 0.99893457, 0.045856215, 0, -0.045856267, 0.9989334, 0, 0, 0)
+loop = false
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.19483449, 0, -0.15665095, 0, 0.25, 0, 0.15665095, 0, 0.19483449, 3.5215993, 2.465001, -2.8564026)
@@ -67,9 +84,19 @@ mesh = SubResource("BoxMesh_u15wj")
 skeleton = NodePath("../..")
 
 [node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
-transform = Transform3D(0.31, 0, 0, 0, 0.31, 4.6425734e-09, 0, -4.6425734e-09, 0.31, 0, -0.016242981, 0.13101959)
-texture = ExtResource("4_7ijhu")
+transform = Transform3D(0.58, 0, 0, 0, 0.58, 1.4901161e-08, 0, -1.4901161e-08, 0.58, 0.00026106834, 0.0016350746, 0.13362503)
+texture = SubResource("ViewportTexture_njatf")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D/Sprite3D"]
+
+[node name="TestWhiteboard" parent="MeshInstance3D/Sprite3D/SubViewport" instance=ExtResource("2_oyqn4")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.890926, 0)
 omni_range = 11.168
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

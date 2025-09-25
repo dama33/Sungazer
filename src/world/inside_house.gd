@@ -1,7 +1,13 @@
 extends Node3D
 
+var moving: bool = false
+
 @export var whiteboard_scene: PackedScene
+var timer: Timer = Timer.new()
 
 func _process(_delta:float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		get_tree().change_scene_to_packed(whiteboard_scene)
+	if moving:
+		%PathFollow3D.progress_ratio = lerp(%PathFollow3D.progress_ratio, 1.0, .1)
+
+func _on_timer_timeout():
+	moving = true

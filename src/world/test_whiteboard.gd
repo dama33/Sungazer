@@ -6,7 +6,7 @@ var next_layer_target:int = 1
 var current_camera:int = 0
 var direction:int = -1
 @export var array: Array[Node2D]
-@export var camera_array: Array[Camera2D]
+#@export var camera_array: Array[Camera2D]
 
 func _process(_delta: float) -> void:
 	
@@ -25,9 +25,9 @@ func _process(_delta: float) -> void:
 	if correct_count >= next_layer_target:
 		layer += 1
 		next_layer_target += layer
-		%Camera2D.limit_top = %Camera2D.limit_bottom
-		%Camera2D.limit_bottom += 30
-		current_camera+=1
-		camera_array[current_camera].make_current()
+		#%Camera2D.limit_top = %Camera2D.limit_bottom
+		#%Camera2D.limit_bottom += 30
+		#current_camera+=1
+		#camera_array[current_camera].make_current()
 	
 	direction = -1
