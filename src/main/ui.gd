@@ -9,7 +9,6 @@ func _ready() -> void:
 	$OnwardButton.pressed.connect(_on_onward_pressed)
 	$QuitButton.pressed.connect(_on_quit_pressed)
 	SignalBus.game_over.connect(_game_over)
-	SignalBus.start_game.emit.call_deferred()
 
 
 func load_game() -> void:

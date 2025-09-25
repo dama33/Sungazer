@@ -29,6 +29,7 @@ func _physics_process(_delta: float) -> void:
 	if player_in_view && !StareChecker.is_visibility_obstructed(%RayCast3D) && StareChecker.is_looking_at_sun():
 		state = State.CHASING
 		movement_speed = 20
+		%AggroTimer.start()
 		
 	if state == State.CHASING:
 		set_movement_target(StareChecker.player.global_position)
@@ -63,7 +64,7 @@ func _on_vision_cone_body_exited(body: Node3D) -> void:
 func _on_aggro_timer_timeout() -> void:
 	state = State.IDLE
 	movement_speed = 5
-
+	set_movement_target(get_random_point())
 
 func _on_grab_range_body_entered(body: Node3D) -> void:
 	if body is Player:

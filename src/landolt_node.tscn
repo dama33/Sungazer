@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bct0snj38jd4e"]
+
+[ext_resource type="Script" uid="uid://mbujd16eya2a" path="res://landolt_node.gd" id="1_wcnx4"]
+[ext_resource type="Texture2D" uid="uid://b4wcjknhwbh3c" path="res://assets/Landolt Up.png" id="2_7vytv"]
+
+[node name="LandoltNode" type="Node2D"]
+script = ExtResource("1_wcnx4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7vytv")
