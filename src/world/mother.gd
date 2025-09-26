@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	elif state == State.GOING_DOWN && abs(position.y+17.26) < 0.001:
 		%Rumbling.stop()
 		SignalBus.mother_movement_end.emit()
-		set_physics_process(false)
+		set_physics_process.call_deferred(false)
 
 func _process(_delta: float) -> void:
 	if  state == State.LOOKING && !StareChecker.is_visibility_obstructed(%RayCast3D):

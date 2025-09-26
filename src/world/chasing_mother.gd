@@ -70,7 +70,9 @@ func _on_aggro_timer_timeout() -> void:
 
 func _on_grab_range_body_entered(body: Node3D) -> void:
 	if body is Player:
+		print("touching")
 		if StareChecker.is_looking_at_sun():
+			print("looking at sun")
 			SignalBus.swap_levels.emit()
 			#SignalBus.game_over.emit()
 		

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if %GreenBox.position.distance_to(target_position) > 0.001:
-		%GreenBox.position = lerp(%GreenBox.position, target_position, .1)
+		%GreenBox.position = lerp(%GreenBox.position, target_position, .5)
 	
 	if Input.is_action_just_pressed("debug_forward"):
 		direction = 0
