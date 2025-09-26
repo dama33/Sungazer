@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://ce71envgjgdg7"]
+[gd_scene load_steps=15 format=3 uid="uid://ce71envgjgdg7"]
 
 [ext_resource type="Script" uid="uid://bxkq8xydqtroa" path="res://src/main/main.gd" id="1_3eh75"]
 [ext_resource type="PackedScene" uid="uid://bhdh3u7e2fuon" path="res://src/world/whitebox.tscn" id="3_djufw"]
+[ext_resource type="PackedScene" uid="uid://dupp1uoxoo1pe" path="res://src/world/inside_house.tscn" id="3_km7bn"]
 [ext_resource type="Script" uid="uid://diia06w2dsb1h" path="res://src/main/ui.gd" id="5_2nke2"]
 [ext_resource type="Script" uid="uid://cbd2jymfvjfom" path="res://src/main/world_environment.gd" id="5_jkpqq"]
 [ext_resource type="Texture2D" uid="uid://c17kc3xr43xvs" path="res://assets/title_screen_mock.png" id="6_2nke2"]
@@ -32,6 +33,7 @@ dof_blur_amount = 0.0
 [node name="Main" type="Node"]
 script = ExtResource("1_3eh75")
 world_scene = ExtResource("3_djufw")
+inside_house = ExtResource("3_km7bn")
 
 [node name="World" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -60,6 +62,7 @@ script = ExtResource("5_2nke2")
 end_credits = ExtResource("6_km7bn")
 
 [node name="BlindnessDial" parent="UI" instance=ExtResource("9_erw1m")]
+unique_name_in_owner = true
 layout_mode = 1
 offset_left = 693.0
 offset_top = 720.0

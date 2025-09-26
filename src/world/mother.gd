@@ -14,6 +14,10 @@ enum State{
 	IDLE
 }
 
+func _exit_tree() -> void:
+	SignalBus.mother_movement_start.disconnect(_mother_movement_start)
+	
+
 func _ready() -> void:
 	state = State.IDLE
 	SignalBus.mother_movement_start.connect(_mother_movement_start)
@@ -37,7 +41,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	if  state == State.LOOKING && !StareChecker.is_visibility_obstructed(%RayCast3D):
-		SignalBus.game_over.emit()
+		SignalBus.swap_levels.emit()
 
 func _mother_movement_start():
 	current_index = randi() % 4

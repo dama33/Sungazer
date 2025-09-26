@@ -5,6 +5,10 @@ var mouse_sensitivity: float = .005
 @onready var player_camera: Camera3D = $Pivot/Camera3D
 var FOV_DEFAULT
 
+func _exit_tree() -> void:
+	StareChecker.sun_entered_view.disconnect(_temp_enter)
+	StareChecker.sun_exited_view.disconnect(_temp_exit)
+
 func _ready():
 	StareChecker.register_player(self)
 	FOV_DEFAULT = player_camera.fov

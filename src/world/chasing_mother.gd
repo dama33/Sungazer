@@ -37,7 +37,9 @@ func _physics_process(_delta: float) -> void:
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 	
-	look_at(Vector3(next_path_position.x, position.y, next_path_position.z))
+	var look_position = Vector3(next_path_position.x, position.y, next_path_position.z)
+	if(position != look_position):
+		look_at(Vector3(next_path_position.x, position.y, next_path_position.z))
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
@@ -69,5 +71,6 @@ func _on_aggro_timer_timeout() -> void:
 func _on_grab_range_body_entered(body: Node3D) -> void:
 	if body is Player:
 		if StareChecker.is_looking_at_sun():
-			SignalBus.game_over.emit()
+			SignalBus.swap_levels.emit()
+			#SignalBus.game_over.emit()
 		

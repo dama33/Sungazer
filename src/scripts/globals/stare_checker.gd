@@ -64,8 +64,10 @@ func register_sun(sun_value: Sun):
 	
 	if player != null:
 		set_physics_process.call_deferred(true)
-		sun_on_screen_notifier.screen_entered.connect(_on_notifier_entered_screen)
-		sun_on_screen_notifier.screen_exited.connect(_on_notifier_exited_screen)
+		if !sun_on_screen_notifier.screen_entered.is_connected(_on_notifier_entered_screen):
+			sun_on_screen_notifier.screen_entered.connect(_on_notifier_entered_screen)
+		if !sun_on_screen_notifier.screen_exited.is_connected(_on_notifier_exited_screen):
+			sun_on_screen_notifier.screen_exited.connect(_on_notifier_exited_screen)
 
 
 ## Should be called in the _ready function of the player node
@@ -73,8 +75,10 @@ func register_player(init_player: Player) -> void:
 	player = init_player
 	if sun_on_screen_notifier != null and sun.sun_raycast != null:
 		set_physics_process.call_deferred(true)
-		sun_on_screen_notifier.screen_entered.connect(_on_notifier_entered_screen)
-		sun_on_screen_notifier.screen_exited.connect(_on_notifier_exited_screen)
+		if !sun_on_screen_notifier.screen_entered.is_connected(_on_notifier_entered_screen):
+			sun_on_screen_notifier.screen_entered.connect(_on_notifier_entered_screen)
+		if !sun_on_screen_notifier.screen_exited.is_connected(_on_notifier_exited_screen):
+			sun_on_screen_notifier.screen_exited.connect(_on_notifier_exited_screen)
 
 
 ## Checks if there is a line of sight between the player and the sun. Returns
