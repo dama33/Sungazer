@@ -1,16 +1,10 @@
 [gd_scene load_steps=10 format=4 uid="uid://bhdh3u7e2fuon"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://src/world/player.tscn" id="1_o8h8f"]
+[ext_resource type="Curve3D" uid="uid://df3ypxjensx4t" path="res://src/world/sun_path_curve_3d.tres" id="1_whqiu"]
 [ext_resource type="PackedScene" uid="uid://bed4h28ynrf28" path="res://src/world/sun.tscn" id="2_4xxeg"]
 [ext_resource type="PackedScene" uid="uid://cq58kpdp5m8gg" path="res://src/world/mother.tscn" id="3_1e2u8"]
 [ext_resource type="PackedScene" uid="uid://b8uxdb5iprnp2" path="res://src/world/chasing_mother.tscn" id="4_iqulo"]
-
-[sub_resource type="Curve3D" id="Curve3D_4xxeg"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 243.796, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 243.796, -243.796, 0, 243.796, 0, 0, 0, 0, 0, 0, -488),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8r68"]
 albedo_color = Color(0.79607844, 0.15294118, 0.23921569, 1)
@@ -37,10 +31,10 @@ _surfaces = [{
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 243.794)
-curve = SubResource("Curve3D_4xxeg")
+curve = ExtResource("1_whqiu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-4.3709914e-08, 0.99997634, -4.370918e-08, 0, -4.3710354e-08, -0.99994946, -0.99996626, -4.3710354e-08, 1.910589e-15, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
 tilt_enabled = false
 
 [node name="Sun" parent="Path3D/PathFollow3D" instance=ExtResource("2_4xxeg")]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://whctcqsjd7eq"]
+
+[ext_resource type="Curve3D" uid="uid://df3ypxjensx4t" path="res://src/world/sun_path_curve_3d.tres" id="1_jv5i5"]
+[ext_resource type="PackedScene" uid="uid://bed4h28ynrf28" path="res://src/world/sun.tscn" id="2_1ujfq"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://src/world/player.tscn" id="3_qpxhs"]
+[ext_resource type="PackedScene" uid="uid://pv6clfvw30e5" path="res://assets/3d_assets/OBJ_Bush.glb" id="4_f1jid"]
+[ext_resource type="PackedScene" uid="uid://bocj7avtotrb" path="res://assets/3d_assets/OBJ_House.glb" id="5_w2fpq"]
+[ext_resource type="Script" uid="uid://dvhf3ytv4ct5s" path="res://src/world/house.gd" id="6_ufv2k"]
+[ext_resource type="PackedScene" uid="uid://c1et7jmf1eqt7" path="res://assets/3d_assets/OBJ_HouseDoor.glb" id="7_wpheo"]
+
+[node name="Backyard" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 250)
+curve = ExtResource("1_jv5i5")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+tilt_enabled = false
+
+[node name="Sun" parent="Path3D/PathFollow3D" instance=ExtResource("2_1ujfq")]
+
+[node name="Player" parent="." instance=ExtResource("3_qpxhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(200, 1, 200)
+
+[node name="OBJ_Bush2" parent="." instance=ExtResource("4_f1jid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.327423, 0, 28.60241)
+
+[node name="House" parent="." instance=ExtResource("5_w2fpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+script = ExtResource("6_ufv2k")
+
+[node name="DoorRotationPoint" type="Node3D" parent="House"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -23.783, 35.827, -1.743)
+
+[node name="HouseDoor" parent="House/DoorRotationPoint" instance=ExtResource("7_wpheo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.783, -35.827, 1.743)
