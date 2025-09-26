@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
+var move_velocity: int = 2500
 var mouse_sensitivity: float = .005
 @onready var player_camera: Camera3D = $Pivot/Camera3D
 var FOV_DEFAULT
@@ -21,7 +22,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	var input_direction = Input.get_vector("debug_left","debug_right","debug_forward","debug_back")
 	var direction = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
-	velocity = direction * 400 * delta
+	velocity = direction * move_velocity * delta
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
