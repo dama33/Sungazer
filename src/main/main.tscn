@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://ce71envgjgdg7"]
 
 [ext_resource type="Script" uid="uid://bxkq8xydqtroa" path="res://src/main/main.gd" id="1_3eh75"]
-[ext_resource type="PackedScene" uid="uid://bhdh3u7e2fuon" path="res://src/world/whitebox.tscn" id="3_djufw"]
+[ext_resource type="PackedScene" uid="uid://whctcqsjd7eq" path="res://src/world/backyard.tscn" id="2_km7bn"]
 [ext_resource type="PackedScene" uid="uid://dupp1uoxoo1pe" path="res://src/world/inside_house.tscn" id="3_km7bn"]
 [ext_resource type="Script" uid="uid://diia06w2dsb1h" path="res://src/main/ui.gd" id="5_2nke2"]
 [ext_resource type="Script" uid="uid://cbd2jymfvjfom" path="res://src/main/world_environment.gd" id="5_jkpqq"]
@@ -32,7 +32,7 @@ dof_blur_amount = 0.0
 
 [node name="Main" type="Node"]
 script = ExtResource("1_3eh75")
-world_scene = ExtResource("3_djufw")
+world_scene = ExtResource("2_km7bn")
 inside_house = ExtResource("3_km7bn")
 
 [node name="World" type="Node3D" parent="."]

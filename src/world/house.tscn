@@ -13,3 +13,17 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -23.783, 35
 
 [node name="HouseDoor" parent="DoorRotationPoint" index="0" instance=ExtResource("2_6syyc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.783, -35.827, 1.743)
+
+[node name="DoorOpenTimer" type="Timer" parent="." index="2"]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="DoorCloseTimer" type="Timer" parent="." index="3"]
+unique_name_in_owner = true
+wait_time = 20.0
+one_shot = true
+
+[connection signal="timeout" from="DoorOpenTimer" to="." method="_on_door_open_timer_timeout"]
+[connection signal="timeout" from="DoorCloseTimer" to="." method="_on_door_close_timer_timeout"]
