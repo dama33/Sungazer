@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-var move_velocity: int = 2500
+var move_velocity: int = 400
 var mouse_sensitivity: float = .005
 @onready var player_camera: Camera3D = $Pivot/Camera3D
 var FOV_DEFAULT

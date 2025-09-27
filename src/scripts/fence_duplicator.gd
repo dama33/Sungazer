@@ -4,11 +4,12 @@ extends Node3D
 ## spacing on corner: (6.5, 0, -5)
 
 
-const SPACING: float = 11.75
+const SPACING: float = 2.7
 const PREFIX: String = "Fence"
 
+"res://fence.tscn"
 
-@onready var fence_scene: PackedScene = load("uid://dxie4ougs2s3h")
+@onready var fence_scene: PackedScene = load("res://fence.tscn")
 @export var count: int = 1
 @export_tool_button("Update", "CreateNewSceneFrom") var instantiate_action = update
 

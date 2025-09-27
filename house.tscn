@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dchl3nr01ucgf"]
+
+[ext_resource type="PackedScene" uid="uid://bocj7avtotrb" path="res://assets/3d_assets/OBJ_House.glb" id="1_metfq"]
+[ext_resource type="PackedScene" uid="uid://c1et7jmf1eqt7" path="res://assets/3d_assets/OBJ_HouseDoor.glb" id="2_6syyc"]
+
+[node name="OBJ_House2" instance=ExtResource("1_metfq")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="DoorRotationPoint" type="Node3D" parent="." index="1"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -23.783, 35.827, -1.743)
+
+[node name="HouseDoor" parent="DoorRotationPoint" index="0" instance=ExtResource("2_6syyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.783, -35.827, 1.743)
