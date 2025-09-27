@@ -17,7 +17,7 @@ func _ready():
 	actor_setup.call_deferred()
 	
 func get_random_point() -> Vector3:
-	return Vector3(randf_range(aabb.position.x, aabb.end.x), position.y, randf_range(aabb.position.z, aabb.end.z))
+	return Vector3(randf_range(aabb.position.x, aabb.end.x), global_position.y, randf_range(aabb.position.z, aabb.end.z))
 	
 
 func actor_setup():
@@ -26,6 +26,7 @@ func actor_setup():
 	set_movement_target(get_random_point())
 	
 func _physics_process(_delta: float) -> void:
+	print(position)
 	if player_in_view && !StareChecker.is_visibility_obstructed(%RayCast3D) && StareChecker.is_looking_at_sun():
 		state = State.CHASING
 		movement_speed = 20
@@ -41,11 +42,11 @@ func _physics_process(_delta: float) -> void:
 	if(position != look_position):
 		look_at(Vector3(next_path_position.x, position.y, next_path_position.z))
 
-	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	velocity = current_agent_position.direction_to(Vector3(next_path_position.x, global_position.y, next_path_position.z)) * movement_speed
 	move_and_slide()
 	
 func set_movement_target(target_position: Vector3):
-	navigation_agent.target_position=target_position
+	navigation_agent.target_position=Vector3(target_position.x, global_position.y, target_position.z)
 
 func _process(_delta: float) -> void:
 	pass

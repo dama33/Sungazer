@@ -4,7 +4,6 @@ var path_follow: PathFollow3D
 
 func _process(delta: float) -> void:
 	path_follow.progress += 4*delta
-	print("Progress: ", path_follow.progress)
 	if path_follow.progress_ratio >= 1:
 		SignalBus.game_over.emit()
 	
