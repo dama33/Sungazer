@@ -21,7 +21,7 @@ func _exit_tree() -> void:
 func _ready():
 	aabb = mesh_instance.get_aabb()
 	visible = false
-	if origin_point:
+	if origin_point != Vector3.ZER0:
 		position = origin_point
 	actor_setup.call_deferred()
 	set_physics_process(false)
@@ -89,5 +89,6 @@ func _spawn_mom():
 	
 func _despawn_mom():
 	visible = false
-	set_physics_process(false)
+	state = State.IDLE
 	position = origin_point
+	set_physics_process(false)

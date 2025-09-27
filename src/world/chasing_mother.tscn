@@ -14,6 +14,7 @@ radius = 1.0336914
 [node name="ChasingMother" type="CharacterBody3D"]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 script = ExtResource("1_3ss8h")
+origin_point = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 visible = false

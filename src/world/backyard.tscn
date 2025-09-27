@@ -424,3 +424,4 @@ skeleton = NodePath("../..")
 [node name="ChasingMother" parent="." node_paths=PackedStringArray("mesh_instance") instance=ExtResource("9_w2fpq")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.37286234, 1.33041, -16.274029)
 mesh_instance = NodePath("../NavigationRegion3D/BackyardFloor")
+origin_point = Vector3(-0.37286234, 1.33041, -16.274029)
