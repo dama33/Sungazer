@@ -18,7 +18,7 @@ func load_game() -> void:
 
 
 func show_victory_screen() -> void:
-	SunData.set_process(false)
+	SunData.process_mode = ProcessMode.PROCESS_MODE_DISABLED
 	for child in get_children():
 		child.queue_free()
 	var end_credits_scene = end_credits.instantiate()

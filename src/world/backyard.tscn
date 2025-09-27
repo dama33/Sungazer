@@ -165,7 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03838253, 250)
 curve = ExtResource("1_jv5i5")
 
 [node name="SunPathFollow" type="PathFollow3D" parent="SunPath"]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+transform = Transform3D(-4.3711324e-08, 1, -4.3711324e-08, 0, -4.371139e-08, -0.9999985, -0.9999985, -4.371139e-08, 1.9106827e-15, 0, 0, 0)
 tilt_enabled = false
 
 [node name="Sun" parent="SunPath/SunPathFollow" instance=ExtResource("2_1ujfq")]

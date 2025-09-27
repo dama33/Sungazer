@@ -14,7 +14,7 @@ func _ready() -> void:
 		if SunData.path_follow != null:
 			parent.progress = SunData.path_follow.progress
 		SunData.register_path_follow_3D(parent)
-		SunData.set_process(true)
+		SunData.process_mode = ProcessMode.PROCESS_MODE_ALWAYS
 	
 func _process(_delta:float): 
 	$DirectionalLight3D.look_at(StareChecker.player.player_camera.global_position)

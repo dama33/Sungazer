@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://bt6mhldu8wi5j" path="res://src/audio/Music/sun gazers main theme.wav" id="10_erw1m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nwmkd"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
 [sub_resource type="Sky" id="Sky_ukrvp"]
