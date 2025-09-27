@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SignalBus="*res://src/scripts/globals/signal_bus.gd"
 EyeHealth="*res://src/scripts/globals/eye_health.gd"
 StareChecker="*res://src/scripts/globals/stare_checker.gd"
+SunData="*res://src/scripts/globals/sun_data.gd"
 
 [debug]
 

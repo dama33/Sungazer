@@ -16,7 +16,7 @@ enum State{
 
 func _exit_tree() -> void:
 	SignalBus.mother_movement_start.disconnect(_mother_movement_start)
-	
+	%LookTimer.stop()
 
 func _ready() -> void:
 	state = State.IDLE

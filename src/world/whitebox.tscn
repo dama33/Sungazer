@@ -34,7 +34,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 243.794)
 curve = ExtResource("1_whqiu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+transform = Transform3D(-4.3711218e-08, 1, -4.3711218e-08, 0, -4.371139e-08, -0.9999961, -0.9999961, -4.371139e-08, 1.910678e-15, 0, 0, 0)
+loop = false
 tilt_enabled = false
 
 [node name="Sun" parent="Path3D/PathFollow3D" instance=ExtResource("2_4xxeg")]

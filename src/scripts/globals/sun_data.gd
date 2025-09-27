@@ -1,0 +1,12 @@
+extends Node
+
+var path_follow: PathFollow3D
+
+func _process(delta: float) -> void:
+	path_follow.progress += 4*delta
+	print("Progress: ", path_follow.progress)
+	if path_follow.progress_ratio >= 1:
+		SignalBus.game_over.emit()
+	
+func register_path_follow_3D(path_follow_value: PathFollow3D):
+	path_follow = path_follow_value
