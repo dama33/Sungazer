@@ -22,6 +22,8 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	var input_direction = Input.get_vector("debug_left","debug_right","debug_forward","debug_back")
 	var direction = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
+	if !is_on_floor():
+		direction.y = -1
 	velocity = direction * move_velocity * delta
 	move_and_slide()
 

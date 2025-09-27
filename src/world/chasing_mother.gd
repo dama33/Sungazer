@@ -38,7 +38,6 @@ func actor_setup():
 	set_movement_target(get_random_point())
 	
 func _physics_process(_delta: float) -> void:
-	print(position)
 	if player_in_view && !StareChecker.is_visibility_obstructed(%RayCast3D) && StareChecker.is_looking_at_sun():
 		state = State.CHASING
 		movement_speed = 20
