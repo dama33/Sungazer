@@ -51,10 +51,11 @@ func _physics_process(_delta: float) -> void:
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 	
 	var look_position = Vector3(next_path_position.x, position.y, next_path_position.z)
-	if(position != look_position):
+	if(position.distance_to(look_position)>.01):
 		look_at(Vector3(next_path_position.x, position.y, next_path_position.z))
-
-	velocity = current_agent_position.direction_to(Vector3(next_path_position.x, global_position.y, next_path_position.z)) * movement_speed
+		velocity = current_agent_position.direction_to(Vector3(next_path_position.x, global_position.y, next_path_position.z)) * movement_speed
+	else: 
+		velocity = Vector3.ZERO
 	move_and_slide()
 	
 func set_movement_target(target_position: Vector3):
