@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://src/world/player.tscn" id="3_qpxhs"]
 [ext_resource type="PackedScene" uid="uid://pv6clfvw30e5" path="res://assets/3d_assets/OBJ_Bush.glb" id="4_f1jid"]
 [ext_resource type="PackedScene" uid="uid://dchl3nr01ucgf" path="res://src/world/house.tscn" id="5_1ujfq"]
-[ext_resource type="PackedScene" uid="uid://cdycufrd48jom" path="res://src/world/fence.tscn" id="7_1ujfq"]
+[ext_resource type="PackedScene" uid="uid://p77j4axenr3k" path="res://src/world/fence.tscn" id="7_1ujfq"]
 [ext_resource type="Script" uid="uid://gmyeauaepkyp" path="res://src/scripts/fence_duplicator.gd" id="9_f1jid"]
 
 [node name="Backyard" type="Node3D"]
