@@ -21,7 +21,7 @@ func _exit_tree() -> void:
 func _ready():
 	aabb = mesh_instance.get_aabb()
 	visible = false
-	if origin_point != Vector3.ZER0:
+	if origin_point != Vector3.ZERO:
 		position = origin_point
 	actor_setup.call_deferred()
 	set_physics_process(false)

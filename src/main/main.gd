@@ -36,6 +36,8 @@ func _swap_levels():
 		scene_instance = inside_house.instantiate()
 		world.add_child.call_deferred(scene_instance)
 		StareChecker.set_physics_process(false)
+		StareChecker.is_sun_in_view = false
+		StareChecker.is_sun_on_screen = false
 		%BlindnessDial.visible=false
 	elif level == 1:
 		level = 0
