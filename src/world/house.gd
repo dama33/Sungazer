@@ -20,11 +20,11 @@ var current_animation: DoorAnimation = DoorAnimation.NONE
 func _ready():
 	door_rotation_point = $DoorRotationPoint
 	set_physics_process(false)
-	#var timer = Timer.new()
-	#timer.wait_time = 5
-	#timer.timeout.connect(_on_timeout)
-	#add_child(timer)
-	#timer.start()
+	var timer = Timer.new()
+	timer.wait_time = 5
+	timer.timeout.connect(_on_timeout)
+	add_child(timer)
+	timer.start()
 
 
 func _physics_process(delta: float) -> void:
@@ -66,8 +66,8 @@ func close_door() -> void:
 	set_physics_process(true)
 
 
-#func _on_timeout() -> void:
-	#if not is_door_closed():
-		#close_door()
-	#else:
-		#open_door()
+func _on_timeout() -> void:
+	if not is_door_closed():
+		close_door()
+	else:
+		open_door()

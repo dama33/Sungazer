@@ -7,9 +7,8 @@ extends Node3D
 const SPACING: float = 2.7
 const PREFIX: String = "Fence"
 
-"res://fence.tscn"
 
-@onready var fence_scene: PackedScene = load("res://fence.tscn")
+@onready var fence_scene: PackedScene = load("uid://cdycufrd48jom")
 @export var count: int = 1
 @export_tool_button("Update", "CreateNewSceneFrom") var instantiate_action = update
 

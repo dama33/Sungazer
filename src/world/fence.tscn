@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxie4ougs2s3h" path="res://assets/3d_assets/OBJ_Fence.glb" id="1_hsy3x"]
 
-[node name="OBJ_Fence2" instance=ExtResource("1_hsy3x")]
+[node name="Fence" instance=ExtResource("1_hsy3x")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="OBJ_Fence" parent="." index="0"]
