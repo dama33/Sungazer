@@ -10,3 +10,7 @@ signal open_door
 signal door_opened
 signal close_door
 signal door_closed
+signal mom_is_watching
+signal mom_is_not_watching
+signal mom_is_chasing
+signal mom_is_not_chasing

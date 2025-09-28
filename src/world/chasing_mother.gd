@@ -37,6 +37,7 @@ var movement_speed: float = IDLE_MOVE_SPEED
 var aabb: AABB
 var state: State = State.IDLE
 var player_in_view: bool = false
+var is_watching_player: bool = false
 @export var origin_point: Vector3
 var voiceline_streams: Dictionary[String, AudioStream] = {}
 var voiceline_uids: Dictionary = {
@@ -96,10 +97,21 @@ func say_voiceline(voiceline_name: String, ignore_cooldown: bool = false) -> voi
 func _physics_process(delta: float) -> void:
 	time_since_voiceline += delta
 	say_voiceline(idle_voicelines.pick_random())
-	if state != State.CHASING and player_in_view and !StareChecker.is_visibility_obstructed(%RayCast3D) and StareChecker.is_looking_at_sun():
+	if player_in_view and !StareChecker.is_visibility_obstructed(%RayCast3D):
+		if not is_watching_player:
+			is_watching_player = true
+			print("mom WATCHING")
+			SignalBus.mom_is_watching.emit()
+	elif is_watching_player:
+		is_watching_player = false
+		print("mom NOT WATCHING")
+		SignalBus.mom_is_not_watching.emit()
+
+	if state != State.CHASING and is_watching_player and StareChecker.is_looking_at_sun():
 		say_voiceline(chasing_voicelines.pick_random(), true)
 		state = State.CHASING
 		movement_speed = CHASE_MOVE_SPEED
+		SignalBus.mom_is_chasing.emit()
 		
 	if state == State.CHASING:
 		set_movement_target(StareChecker.player.global_position)
@@ -161,6 +173,7 @@ func despawn_mom():
 	%ExitHouseTimer.wait_time = randi() % 5 + 5
 	%ExitHouseTimer.start()
 	%EnterHouseTimer.stop()
+	SignalBus.mom_is_not_chasing.emit()
 
 
 func spawn_mom():
