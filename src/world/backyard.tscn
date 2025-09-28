@@ -120,10 +120,10 @@ uv1_scale = Vector3(7, 3, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qpxhs"]
 material = SubResource("StandardMaterial3D_a6k4r")
-size = Vector2(70, 39.89)
+size = Vector2(70, 40)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_f1jid"]
-vertices = PackedVector3Array(-34.5, 0.92633533, -77.06282, -34.5, 0.92633533, -40.06282, 34.5, 0.92633533, -40.06282, 34.5, 0.92633533, -77.06282)
+vertices = PackedVector3Array(-34.5, 0.5242691, -79.30618, -34.5, 0.5242691, -40.306183, 34.5, 0.5242691, -40.306183, 34.5, 0.5242691, -79.30618)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mrl3h"]
@@ -290,12 +290,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.43112, -0.66938996, 9.606
 shape = SubResource("ConvexPolygonShape3D_wnefa")
 
 [node name="BackyardFloor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062651634, -0.84508896)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062651634, -1.5949516)
 mesh = SubResource("PlaneMesh_qpxhs")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03838253, 58.21123)
-visible = false
 navigation_mesh = SubResource("NavigationMesh_f1jid")
 
 [node name="ChasingMother" parent="." node_paths=PackedStringArray("mesh_instance") instance=ExtResource("9_w2fpq")]
