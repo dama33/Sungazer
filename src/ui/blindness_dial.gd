@@ -13,7 +13,7 @@ func _ready() -> void:
 	EyeHealth.eyes_damaged.connect(_on_eyes_damaged)
 	progress_arrow = $ProgressArrow
 	progress_arrow.rotation_degrees = MIN_ROTATION
-	progress_arrow.pivot_offset = Vector2(progress_arrow.size.x / 2, progress_arrow.size.y)
+	#progress_arrow.pivot_offset = Vector2(progress_arrow.size.x / 2, progress_arrow.size.y)
 
 
 func _on_eyes_damaged(current_health: int) -> void:

@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxxjtka4w0uaf"]
+[gd_scene load_steps=4 format=3 uid="uid://bxxjtka4w0uaf"]
 
 [ext_resource type="Script" uid="uid://dvqrdg6doty14" path="res://src/ui/blindness_dial.gd" id="1_urc8k"]
 [ext_resource type="Texture2D" uid="uid://bxtkkqdhs15uh" path="res://assets/blindness_dial_cropped.png" id="2_urc8k"]
+[ext_resource type="Texture2D" uid="uid://dmxkhjq41gb5o" path="res://assets/Ashlynne_sungazer_artwork/Cooler arrow.png" id="3_ymttx"]
 
 [node name="BlindnessDial" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -27,7 +30,8 @@ texture = ExtResource("2_urc8k")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="ProgressArrow" type="ColorRect" parent="."]
+[node name="ProgressArrow2" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.342
@@ -41,3 +45,21 @@ offset_bottom = 0.4399414
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(17, 480)
+
+[node name="ProgressArrow" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.224
+anchor_top = 0.21100001
+anchor_right = 0.476
+anchor_bottom = 0.836
+offset_left = 0.11999512
+offset_top = 0.039993286
+offset_right = -0.11999512
+offset_bottom = 0.039978027
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(78, 196)
+texture = ExtResource("3_ymttx")
+expand_mode = 1
+stretch_mode = 4
