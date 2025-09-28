@@ -20,6 +20,8 @@ var current_animation: DoorAnimation = DoorAnimation.NONE
 func _ready():
 	door_rotation_point = $DoorRotationPoint
 	set_physics_process(false)
+	SignalBus.close_door.connect(close_door)
+	SignalBus.open_door.connect(open_door)
 
 
 func _physics_process(delta: float) -> void:
@@ -37,6 +39,10 @@ func _physics_process(delta: float) -> void:
 	if is_door_open() or is_door_closed():
 		current_animation = DoorAnimation.NONE
 		set_physics_process(false)
+		if is_door_open():
+			SignalBus.door_opened.emit()
+		if is_door_closed():
+			SignalBus.door_closed.emit()
 
 
 func is_door_open() -> bool:
@@ -59,14 +65,3 @@ func close_door() -> void:
 		return
 	current_animation = DoorAnimation.CLOSING
 	set_physics_process(true)
-
-func _on_door_close_timer_timeout() -> void:
-	close_door()
-	SignalBus.despawn_mom.emit()
-	$DoorOpenTimer.start()
-
-
-func _on_door_open_timer_timeout() -> void:
-	open_door()
-	SignalBus.spawn_mom.emit()
-	$DoorCloseTimer.start()
