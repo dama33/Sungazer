@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dupp1uoxoo1pe"]
+[gd_scene load_steps=12 format=3 uid="uid://dupp1uoxoo1pe"]
 
 [ext_resource type="Texture2D" uid="uid://drm4j6iea0nbr" path="res://assets/DARLA.png" id="1_fgvrl"]
 [ext_resource type="Script" uid="uid://cg10847t75ou3" path="res://src/world/inside_house.gd" id="1_njatf"]
 [ext_resource type="PackedScene" uid="uid://22tlww7na263" path="res://src/world/test_whiteboard.tscn" id="2_oyqn4"]
+[ext_resource type="PackedScene" uid="uid://d2oqttfgmruky" path="res://assets/3d_assets/Eisel.glb" id="4_7ijhu"]
+[ext_resource type="ArrayMesh" uid="uid://cx14xrxfluv2a" path="res://assets/3d_assets/bulb_mesh.res" id="5_u15wj"]
 
 [sub_resource type="Curve3D" id="Curve3D_njatf"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.213, -4.64),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.003, -4.64),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -25,7 +27,7 @@ material = SubResource("StandardMaterial3D_7ijhu")
 size = Vector3(0.5, 3, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_njatf"]
-viewport_path = NodePath("MeshInstance3D/Sprite3D/SubViewport")
+viewport_path = NodePath("Eisel/Sprite3D/SubViewport")
 
 [node name="Inside House" type="Node3D"]
 script = ExtResource("1_njatf")
@@ -60,7 +62,7 @@ curve = SubResource("Curve3D_njatf")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 unique_name_in_owner = true
-transform = Transform3D(0.9999986, 0, 0, 0, 0.99893457, 0.045856215, 0, -0.045856267, 0.9989334, 0, 0, 0)
+transform = Transform3D(0.9999986, 0, 0, 0, 0.99998575, 0.00064654177, 0, -0.0006465425, 0.99998456, 0, 0, 0)
 loop = false
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
@@ -71,6 +73,7 @@ texture = ExtResource("1_fgvrl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.98129267, 0.19252196, 0, -0.19252196, 0.98129267, 0, 3.458952, -3.9005044)
+visible = false
 mesh = SubResource("BoxMesh_njatf")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
@@ -83,20 +86,28 @@ transform = Transform3D(1, 0, 0, 0, 0.98129267, -0.19252196, 0, 0.19252196, 0.98
 mesh = SubResource("BoxMesh_u15wj")
 skeleton = NodePath("../..")
 
-[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
-transform = Transform3D(0.58, 0, 0, 0, 0.58, 1.4901161e-08, 0, -1.4901161e-08, 0.58, 0.00026106834, 0.0016350746, 0.13362503)
-texture = SubResource("ViewportTexture_njatf")
-
-[node name="SubViewport" type="SubViewport" parent="MeshInstance3D/Sprite3D"]
-
-[node name="TestWhiteboard" parent="MeshInstance3D/Sprite3D/SubViewport" instance=ExtResource("2_oyqn4")]
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.890926, 0)
-omni_range = 11.168
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.326884, -2.3837805)
+omni_range = 7.083
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="Eisel" parent="." instance=ExtResource("4_7ijhu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.10459697, 0, -3.4222586)
+
+[node name="Sprite3D" type="Sprite3D" parent="Eisel"]
+transform = Transform3D(-0.58, 1.5207686e-08, -8.624705e-08, 0, 0.5711884, 0.10071595, 8.757756e-08, 0.10071595, -0.5711884, -0.010958321, 3.838, 0.40700006)
+texture = SubResource("ViewportTexture_njatf")
+
+[node name="SubViewport" type="SubViewport" parent="Eisel/Sprite3D"]
+size = Vector2i(482, 542)
+
+[node name="TestWhiteboard" parent="Eisel/Sprite3D/SubViewport" instance=ExtResource("2_oyqn4")]
+
+[node name="Light" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.13, 15.075, -2.56)
+mesh = ExtResource("5_u15wj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

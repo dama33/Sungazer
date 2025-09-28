@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://22tlww7na263"]
+[gd_scene load_steps=7 format=3 uid="uid://22tlww7na263"]
 
 [ext_resource type="PackedScene" uid="uid://bct0snj38jd4e" path="res://src/landolt_node.tscn" id="1_k8l88"]
 [ext_resource type="Script" uid="uid://b72nrckto72xt" path="res://src/world/test_whiteboard.gd" id="1_no8h2"]
@@ -8,110 +8,98 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_ggeqn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_no8h2"]
-transparency = 1
-albedo_color = Color(0.91764706, 0, 0, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_ggeqn"]
-material = SubResource("StandardMaterial3D_no8h2")
-
 [node name="TestWhiteboard" type="Node2D" node_paths=PackedStringArray("array")]
 scale = Vector2(2.14, 2.14)
 script = ExtResource("1_no8h2")
 array = [NodePath("Landolt1"), NodePath("Landolt2"), NodePath("Landolt3"), NodePath("Landolt4"), NodePath("Landolt5"), NodePath("Landolt6"), NodePath("Landolt7"), NodePath("Landolt8"), NodePath("Landolt9"), NodePath("Landolt10"), NodePath("Landolt11"), NodePath("Landolt12"), NodePath("Landolt13"), NodePath("Landolt14"), NodePath("Landolt15"), NodePath("Landolt16"), NodePath("Landolt17"), NodePath("Landolt18"), NodePath("Landolt19"), NodePath("Landolt20"), NodePath("Landolt21")]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(186.91588, 149.5327)
-scale = Vector2(373.83176, 300)
+position = Vector2(129.2056, 149.5327)
+scale = Vector2(258.4112, 300)
 mesh = SubResource("BoxMesh_ggeqn")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-position = Vector2(74.299065, 72.4299)
-scale = Vector2(76.53738, 43.490658)
-mesh = SubResource("QuadMesh_ggeqn")
-
 [node name="Landolt1" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(110.220184, 25.276903)
+position = Vector2(110.458496, 50.46729)
 scale = Vector2(0.99722993, 0.99722993)
 
 [node name="Landolt2" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(75.11215, 72.299065)
+position = Vector2(75.350464, 97.48945)
 scale = Vector2(0.49861497, 0.49861497)
 
 [node name="Landolt3" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(142.11215, 72.299065)
+position = Vector2(142.35046, 97.48945)
 scale = Vector2(0.5, 0.5)
 
 [node name="Landolt4" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(59.112152, 116.70907)
+position = Vector2(59.350464, 141.89944)
 scale = Vector2(0.3490305, 0.3490305)
 
 [node name="Landolt5" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(109.11215, 116.70907)
+position = Vector2(109.350464, 141.89944)
 scale = Vector2(0.35000002, 0.35000002)
 
 [node name="Landolt6" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(159.11215, 116.70907)
+position = Vector2(159.35046, 141.89944)
 scale = Vector2(0.35000002, 0.35000002)
 
 [node name="Landolt7" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(49.112152, 142.29909)
+position = Vector2(49.350464, 167.48947)
 scale = Vector2(0.24930748, 0.24930748)
 
 [node name="Landolt8" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(89.11215, 142.29909)
+position = Vector2(89.350464, 167.48947)
 scale = Vector2(0.24930748, 0.24930748)
 
 [node name="Landolt9" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(129.11215, 142.29909)
+position = Vector2(129.35046, 167.48947)
 scale = Vector2(0.24930748, 0.24930748)
 
 [node name="Landolt10" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(169.11215, 142.29909)
+position = Vector2(169.35046, 167.48947)
 scale = Vector2(0.24930748, 0.24930748)
 
 [node name="Landolt11" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(42.112144, 172.29909)
+position = Vector2(42.350456, 197.48947)
 scale = Vector2(0.19944601, 0.19944601)
 
 [node name="Landolt12" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(75.11215, 172.29909)
+position = Vector2(75.350464, 197.48947)
 scale = Vector2(0.19944601, 0.19944601)
 
 [node name="Landolt13" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(109.11215, 172.29909)
+position = Vector2(109.350464, 197.48947)
 scale = Vector2(0.19944601, 0.19944601)
 
 [node name="Landolt14" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(142.11215, 172.29909)
+position = Vector2(142.35046, 197.48947)
 scale = Vector2(0.19944601, 0.19944601)
 
 [node name="Landolt15" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(175.11214, 172.29909)
+position = Vector2(175.35045, 197.48947)
 scale = Vector2(0.19944601, 0.19944601)
 
 [node name="Landolt16" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(37.612152, 201.29909)
+position = Vector2(37.850464, 226.48947)
 scale = Vector2(0.1495845, 0.1495845)
 
 [node name="Landolt17" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(66.11216, 201.29909)
+position = Vector2(66.35047, 226.48947)
 scale = Vector2(0.1495845, 0.1495845)
 
 [node name="Landolt18" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(94.61216, 201.29909)
+position = Vector2(94.85047, 226.48947)
 scale = Vector2(0.1495845, 0.1495845)
 
 [node name="Landolt19" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(123.112175, 201.29909)
+position = Vector2(123.35049, 226.48947)
 scale = Vector2(0.1495845, 0.1495845)
 
 [node name="Landolt20" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(151.61217, 201.29909)
+position = Vector2(151.85048, 226.48947)
 scale = Vector2(0.1495845, 0.1495845)
 
 [node name="Landolt21" parent="." instance=ExtResource("1_k8l88")]
-position = Vector2(180.11214, 201.29909)
+position = Vector2(180.35045, 226.48947)
 scale = Vector2(0.1495845, 0.1495845)
 
 [node name="Landolt22" parent="." instance=ExtResource("1_k8l88")]

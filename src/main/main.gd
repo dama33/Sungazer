@@ -4,6 +4,7 @@ extends Node
 @export var world_scene: PackedScene
 @export var inside_house: PackedScene
 var scene_instance: Node
+var environment: Environment = null
 
 
 var UI: Control
@@ -34,12 +35,15 @@ func _swap_levels():
 		level = 1
 		world.remove_child.call_deferred(scene_instance)
 		scene_instance = inside_house.instantiate()
+		environment = ($WorldEnvironment.environment as Environment).duplicate_deep()
+		$WorldEnvironment.environment = null
 		world.add_child.call_deferred(scene_instance)
 		StareChecker.set_physics_process(false)
 		StareChecker.is_sun_in_view = false
 		StareChecker.is_sun_on_screen = false
 		%BlindnessDial.visible=false
 	elif level == 1:
+		$WorldEnvironment.environment = environment
 		level = 0
 		world.remove_child.call_deferred(scene_instance)
 		scene_instance = world_scene.instantiate()

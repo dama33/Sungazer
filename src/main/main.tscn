@@ -43,6 +43,7 @@ volume_db = -19.803
 autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
 environment = SubResource("Environment_jkpqq")
 camera_attributes = SubResource("CameraAttributesPractical_jqarl")
 script = ExtResource("5_jkpqq")
