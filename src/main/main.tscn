@@ -67,6 +67,7 @@ layout_mode = 1
 offset_left = 693.0
 offset_top = 720.0
 offset_right = -587.0
+offset_bottom = 0.0
 
 [node name="KidExpressions" parent="UI" instance=ExtResource("8_km7bn")]
 layout_mode = 1
@@ -102,6 +103,7 @@ offset_bottom = 284.12
 text = "Quit"
 
 [node name="TitleScreenMock" type="TextureRect" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
