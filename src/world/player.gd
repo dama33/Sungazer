@@ -3,8 +3,9 @@ class_name Player
 
 var move_velocity: int = 400
 var mouse_sensitivity: float = .005
-@onready var player_camera: Camera3D = $Pivot/Camera3D
-var FOV_DEFAULT
+@onready var player_camera: Camera3D = %Pivot/Camera3D
+@onready var pivot_point: Node3D = %Pivot
+var FOV_DEFAULT: float
 
 func _exit_tree() -> void:
 	StareChecker.sun_entered_view.disconnect(_temp_enter)
@@ -35,8 +36,8 @@ func _input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event is InputEventMouseMotion && Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		%Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
-		%Pivot.rotation.x = clamp(%Pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		pivot_point.rotate_x(-event.relative.y * mouse_sensitivity)
+		pivot_point.rotation.x = clamp(pivot_point.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func random_time_for_countdown_start_timer():
 	%CountdownStartTimer.wait_time = (randf()*6)+5
