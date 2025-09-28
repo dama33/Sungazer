@@ -8,7 +8,9 @@ signal sun_entered_view
 signal sun_exited_view
 
 
-const VISION_PULL_STRENGTH = PI / 4
+const VISION_PULL_STRENGTH = PI / 8
+const ZOOM_IN_SPEED = 0.3
+const ZOOM_OUT_SPEED = 2.0
 
 
 var sun_on_screen_notifier: VisibleOnScreenNotifier3D = null
@@ -35,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		#IF YOU WANT TO TEST WITHOUT THE ZOOM IN AND ENERGY, COMMENT OUT THESE LINES
 		visual_sun_effects(delta)
 	else:
-		player.player_camera.fov = lerpf(player.player_camera.fov, player.FOV_DEFAULT, delta * 2)
+		player.player_camera.fov = lerpf(player.player_camera.fov, player.FOV_DEFAULT, delta * ZOOM_OUT_SPEED)
 
 	if not is_sun_on_screen:
 		return
@@ -69,9 +71,10 @@ func visual_sun_effects(delta: float):
 	
 	var dot_product = (-camera_center_direction).dot(direction_to_sun)
 	if dot_product < 0:
-		sun.directional_light.light_energy = 1+(6*-dot_product)
+		var target_light_energy = 1+(6*-dot_product)
+		sun.directional_light.light_energy = lerpf(sun.directional_light.light_energy, target_light_energy, delta * 0.2)
 		var target_fov = player.FOV_DEFAULT-(pow(65,abs(dot_product)))
-		player.player_camera.fov = lerpf(player.player_camera.fov, target_fov, delta * 0.75)
+		player.player_camera.fov = lerpf(player.player_camera.fov, target_fov, delta * ZOOM_IN_SPEED)
 
 
 func is_looking_at_sun() -> bool:
@@ -134,4 +137,3 @@ func _on_notifier_exited_screen() -> void:
 
 func _on_blindness_achieved() -> void:
 	set_physics_process(false)
-	print("EYES MELTED!!")
