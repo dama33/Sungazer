@@ -3,10 +3,12 @@ extends Control
 
 @export var end_credits: PackedScene
 var game_over_ui: PackedScene = preload("uid://c67s7krlh3p17")
+var has_started: bool = false
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("start_game"):
+	if Input.is_action_just_pressed("start_game") and not has_started:
+		has_started = true
 		SignalBus.start_game.emit()
 
 
