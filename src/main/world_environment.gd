@@ -14,7 +14,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if SunData.process_mode == ProcessMode.PROCESS_MODE_ALWAYS:
 		if SunData.path_follow.progress_ratio >.75:
-			print(SunData.path_follow.progress_ratio)
 			if environment.sky.sky_material is ProceduralSkyMaterial:
 				environment.sky.sky_material.sky_horizon_color = environment.sky.sky_material.sky_horizon_color.lerp(Color("bc610b"),.01)
 

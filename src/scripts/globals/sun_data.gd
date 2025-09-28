@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if path_follow:
 		path_follow.progress += 4*delta
-		if 1-path_follow.progress_ratio <0.001:
+		if 1 - path_follow.progress_ratio < 0.001:
 			SignalBus.game_over.emit()
 
 

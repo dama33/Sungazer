@@ -27,13 +27,10 @@ func _ready() -> void:
 ## Check every frame if the sun has become obstructed or was obstructed and is
 ## no longer.
 func _physics_process(delta: float) -> void:
-	#print("yaw: " + str(player.rotation.y))
-	#print("pitch: " + str(player.pivot_point.rotation.x))
+	#print(player.pivot_point.rotation.x)
 	var dot_product = player.player_camera.global_transform.basis.z.dot(player.player_camera.global_position.direction_to(sun.sun_raycast.global_position))
 
-
 	if is_sun_on_screen and is_sun_in_view:
-		#var sun_screen_pos = player.player_camera.unproject_position(sun.sun_raycast.global_position)
 		EyeHealth.take_damage(abs(dot_product), delta)
 		#IF YOU WANT TO TEST WITHOUT THE ZOOM IN AND ENERGY, COMMENT OUT THESE LINES
 		visual_sun_effects(delta)
@@ -53,6 +50,7 @@ func _physics_process(delta: float) -> void:
 
 
 func visual_sun_effects(delta: float):
+	var invert_correction: int = -1 if (SunData.path_follow.progress_ratio >= 0.5) else 1
 	var camera_center_direction = -1 * player.player_camera.global_transform.basis.z
 	var player_position = player.player_camera.global_position
 	var sun_position = sun.sun_raycast.global_position
@@ -61,20 +59,19 @@ func visual_sun_effects(delta: float):
 	var camera_center_yaw_angle = Vector2(camera_center_direction.x, camera_center_direction.z).angle()
 	var target_yaw_angle = Vector2(direction_to_sun.x, direction_to_sun.z).angle()
 	var yaw_rotation = camera_center_yaw_angle - rotate_toward(camera_center_yaw_angle, target_yaw_angle, VISION_PULL_STRENGTH * delta)
-	#print(str(player.rotation.y) + "    " + str(camera_center_angle) + "    " + str(yaw_angle) + "    " + str(yaw_rotation))
+	#print(str(player.rotation.y) + "    " + str(camera_center_yaw_angle) + "    " + str(target_yaw_angle) + "    " + str(sign(yaw_rotation)))
 	player.rotation.y += yaw_rotation
 	
 	var camera_center_pitch_angle = Vector2(camera_center_direction.y, camera_center_direction.z).angle()
-	var target_pitch_angle = Vector2(direction_to_sun.y, direction_to_sun.z).angle()
+	var target_pitch_angle = min(Vector2(direction_to_sun.y, direction_to_sun.z).angle(), PI / 2)
 	var pitch_rotation = camera_center_pitch_angle - rotate_toward(camera_center_pitch_angle, target_pitch_angle, VISION_PULL_STRENGTH * delta)
-	player.pivot_point.rotation.x += pitch_rotation
+	player.pivot_point.rotation.x += pitch_rotation * invert_correction
 	
 	var dot_product = (-camera_center_direction).dot(direction_to_sun)
-	if dot_product<0:
+	if dot_product < 0:
 		sun.directional_light.light_energy = 1+(6*-dot_product)
 		var target_fov = player.FOV_DEFAULT-(pow(65,abs(dot_product)))
 		player.player_camera.fov = lerpf(player.player_camera.fov, target_fov, delta * 0.75)
-		#player.player_camera.fov = player.FOV_DEFAULT-(pow(65,abs(dot_product)))
 
 
 func is_looking_at_sun() -> bool:
