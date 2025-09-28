@@ -13,3 +13,8 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -23.783, 35
 
 [node name="HouseDoor" parent="DoorRotationPoint" index="0" instance=ExtResource("2_6syyc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.783, -35.827, 1.743)
+
+[node name="DoorSounds" type="AudioStreamPlayer3D" parent="." index="2"]
+unique_name_in_owner = true
+max_db = 1.0
+bus = &"SFX"

@@ -100,7 +100,6 @@ func _physics_process(delta: float) -> void:
 		say_voiceline(chasing_voicelines.pick_random(), true)
 		state = State.CHASING
 		movement_speed = CHASE_MOVE_SPEED
-		%AggroTimer.start()
 		
 	if state == State.CHASING:
 		set_movement_target(StareChecker.player.global_position)
@@ -134,26 +133,21 @@ func _on_vision_cone_body_exited(body: Node3D) -> void:
 	if body is Player:
 		player_in_view = false
 
-func _on_aggro_timer_timeout() -> void:
-	state = State.IDLE
-	movement_speed = IDLE_MOVE_SPEED
-	set_movement_target(get_random_point())
-
 func _on_grab_range_body_entered(body: Node3D) -> void:
 	if not body is Player or state != State.CHASING:
 		return
-	if StareChecker.is_looking_at_sun():
+	elif State.CHASING:
 		SignalBus.swap_levels.emit()
-	else:
-		say_voiceline(foiled_voicelines.pick_random(), true)
+		
 
 func _on_enter_house_timer_timeout():
 	if state == State.CHASING:
-		return
+		say_voiceline(foiled_voicelines.pick_random(), true)
 	%NavTimer.stop()
 	state = State.IDLE
 	set_movement_target(origin_point)
 	is_attempting_to_go_inside = true
+	
 
 func _on_exit_house_timer_timeout():
 	SignalBus.open_door.emit()

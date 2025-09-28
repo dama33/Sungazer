@@ -1,10 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckudr8chj1kgo"]
+[gd_scene load_steps=12 format=3 uid="uid://ckudr8chj1kgo"]
 
 [ext_resource type="Script" uid="uid://br1seygui4q2b" path="res://src/world/player.gd" id="1_4flbx"]
 [ext_resource type="AudioStream" uid="uid://ux2r7555qvde" path="res://src/audio/SFX/sizzling.mp3" id="2_4xnbj"]
+[ext_resource type="AudioStream" uid="uid://bda3kgrhjc42u" path="res://assets/sound/sound_effects/footsteps/Sungazer_Footsteps_1.wav" id="2_apijt"]
+[ext_resource type="AudioStream" uid="uid://c77d0gvxq3w6h" path="res://assets/sound/sound_effects/footsteps/Sungazer_Footsteps_2.wav" id="3_jg3pf"]
+[ext_resource type="AudioStream" uid="uid://t3txnlwskx45" path="res://assets/sound/sound_effects/footsteps/Sungazer_Footsteps_3.wav" id="4_wofqe"]
+[ext_resource type="AudioStream" uid="uid://m6gj23bl3rvt" path="res://assets/sound/sound_effects/footsteps/Sungazer_Footsteps_5.wav" id="5_f654c"]
+[ext_resource type="AudioStream" uid="uid://bh7jqatas57jg" path="res://assets/sound/sound_effects/footsteps/Sungazer_Footsteps_6.wav" id="6_s160v"]
+[ext_resource type="AudioStream" uid="uid://bc3myg7fidxk4" path="res://assets/sound/sound_effects/footsteps/Sungazer_Footsteps_7.wav" id="7_u7jg5"]
+[ext_resource type="AudioStream" uid="uid://delcx8b7ksvi7" path="res://assets/sound/sound_effects/footsteps/Sungazer_Footsteps_8.wav" id="8_2j6mt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4xnbj"]
 height = 3.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hp5j1"]
+streams_count = 8
+stream_0/stream = ExtResource("2_apijt")
+stream_1/stream = ExtResource("3_jg3pf")
+stream_2/stream = ExtResource("4_wofqe")
+stream_3/stream = ExtResource("4_wofqe")
+stream_4/stream = ExtResource("5_f654c")
+stream_5/stream = ExtResource("6_s160v")
+stream_6/stream = ExtResource("7_u7jg5")
+stream_7/stream = ExtResource("8_2j6mt")
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
@@ -18,6 +36,12 @@ unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 current = true
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="Pivot/Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0271885, -0.016254902)
+stream = SubResource("AudioStreamRandomizer_hp5j1")
+bus = &"SFX"
 
 [node name="Sizzle" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true

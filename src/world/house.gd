@@ -7,15 +7,22 @@ enum DoorAnimation {
 	CLOSING,
 }
 
+enum DoorSounds {
+	DOOR_CLOSE,
+	DOOR_OPEN
+}
+
 ## The degree of rotation from 0 that is the maximum distance the door can rotate
 const DOOR_OPEN_ROTATION = -70
 ## Number of degrees the door rotates per second during the animation
 const ROTATION_PER_SECOND = 50
 
-
 var door_rotation_point: Node3D
 var current_animation: DoorAnimation = DoorAnimation.NONE
-
+var sound_uids: Dictionary = {
+	DoorSounds.DOOR_CLOSE: load("uid://clapcgvpp2n44"),
+	DoorSounds.DOOR_OPEN: load("uid://cpv2m4qfqomfx")
+}
 
 func _ready():
 	door_rotation_point = $DoorRotationPoint
@@ -42,6 +49,8 @@ func _physics_process(delta: float) -> void:
 		if is_door_open():
 			SignalBus.door_opened.emit()
 		if is_door_closed():
+			%DoorSounds.stream = sound_uids[DoorSounds.DOOR_CLOSE]
+			%DoorSounds.play()
 			SignalBus.door_closed.emit()
 
 
@@ -57,6 +66,8 @@ func open_door() -> void:
 	if current_animation != DoorAnimation.NONE or not is_door_closed():
 		return
 	current_animation = DoorAnimation.OPENING
+	%DoorSounds.stream = sound_uids[DoorSounds.DOOR_OPEN]
+	%DoorSounds.play()
 	set_physics_process(true)
 
 

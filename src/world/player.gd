@@ -6,6 +6,7 @@ var mouse_sensitivity: float = .005
 @onready var player_camera: Camera3D = %Pivot/Camera3D
 @onready var pivot_point: Node3D = %Pivot
 var FOV_DEFAULT: float
+var sound_distance: float = 0
 
 func _exit_tree() -> void:
 	StareChecker.sun_entered_view.disconnect(_temp_enter)
@@ -26,6 +27,10 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		direction.y = -1
 	velocity = direction * move_velocity * delta
+	sound_distance += velocity.length()
+	if sound_distance > 200:
+		sound_distance = 0
+		%Footsteps.play()
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:

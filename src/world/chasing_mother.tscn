@@ -40,11 +40,6 @@ unique_name_in_owner = true
 wait_time = 5.0
 autostart = true
 
-[node name="AggroTimer" type="Timer" parent="."]
-unique_name_in_owner = true
-wait_time = 5.0
-one_shot = true
-
 [node name="GrabRange" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GrabRange"]
@@ -66,5 +61,4 @@ wait_time = 40.0
 [connection signal="body_entered" from="VisionCone" to="." method="_on_vision_cone_body_entered"]
 [connection signal="body_exited" from="VisionCone" to="." method="_on_vision_cone_body_exited"]
 [connection signal="timeout" from="NavTimer" to="." method="_on_nav_timer_timeout"]
-[connection signal="timeout" from="AggroTimer" to="." method="_on_aggro_timer_timeout"]
 [connection signal="body_entered" from="GrabRange" to="." method="_on_grab_range_body_entered"]
