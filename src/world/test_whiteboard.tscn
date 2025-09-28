@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://22tlww7na263"]
+[gd_scene load_steps=9 format=3 uid="uid://22tlww7na263"]
 
 [ext_resource type="PackedScene" uid="uid://bct0snj38jd4e" path="res://src/landolt_node.tscn" id="1_k8l88"]
 [ext_resource type="Script" uid="uid://b72nrckto72xt" path="res://src/world/test_whiteboard.gd" id="1_no8h2"]
 [ext_resource type="Texture2D" uid="uid://b40vkoep35khf" path="res://assets/Green box.png" id="3_ggeqn"]
+[ext_resource type="Texture2D" uid="uid://dst8psptf1nyx" path="res://assets/Transparent X.png" id="4_ds3jt"]
+[ext_resource type="AudioStream" uid="uid://e16pfgpha7cs" path="res://assets/sound/sound_effects/ui/Sungazer_UI_Chime.wav" id="5_r0bhj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ggeqn"]
 
@@ -16,7 +18,7 @@ material = SubResource("StandardMaterial3D_no8h2")
 [node name="TestWhiteboard" type="Node2D" node_paths=PackedStringArray("array")]
 scale = Vector2(2.14, 2.14)
 script = ExtResource("1_no8h2")
-array = [NodePath("Landolt1"), NodePath("Landolt2"), NodePath("Landolt3"), NodePath("Landolt4"), NodePath("Landolt5"), NodePath("Landolt6"), NodePath("Landolt7"), NodePath("Landolt8"), NodePath("Landolt9"), NodePath("Landolt10"), NodePath("Landolt11"), NodePath("Landolt12"), NodePath("Landolt13"), NodePath("Landolt14"), NodePath("Landolt15"), NodePath("Landolt16"), NodePath("Landolt17"), NodePath("Landolt18"), NodePath("Landolt19"), NodePath("Landolt20"), NodePath("Landolt21"), NodePath("Landolt22"), NodePath("Landolt23"), NodePath("Landolt24"), NodePath("Landolt25"), NodePath("Landolt26"), NodePath("Landolt27"), NodePath("Landolt28")]
+array = [NodePath("Landolt1"), NodePath("Landolt2"), NodePath("Landolt3"), NodePath("Landolt4"), NodePath("Landolt5"), NodePath("Landolt6"), NodePath("Landolt7"), NodePath("Landolt8"), NodePath("Landolt9"), NodePath("Landolt10"), NodePath("Landolt11"), NodePath("Landolt12"), NodePath("Landolt13"), NodePath("Landolt14"), NodePath("Landolt15"), NodePath("Landolt16"), NodePath("Landolt17"), NodePath("Landolt18"), NodePath("Landolt19"), NodePath("Landolt20"), NodePath("Landolt21")]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 position = Vector2(186.91588, 149.5327)
@@ -113,30 +115,37 @@ position = Vector2(180.11214, 201.29909)
 scale = Vector2(0.1495845, 0.1495845)
 
 [node name="Landolt22" parent="." instance=ExtResource("1_k8l88")]
+visible = false
 position = Vector2(34.11215, 232.29909)
 scale = Vector2(0.099723004, 0.099723004)
 
 [node name="Landolt23" parent="." instance=ExtResource("1_k8l88")]
+visible = false
 position = Vector2(59.112152, 232.29909)
 scale = Vector2(0.099723004, 0.099723004)
 
 [node name="Landolt24" parent="." instance=ExtResource("1_k8l88")]
+visible = false
 position = Vector2(84.11215, 232.29909)
 scale = Vector2(0.099723004, 0.099723004)
 
 [node name="Landolt25" parent="." instance=ExtResource("1_k8l88")]
+visible = false
 position = Vector2(109.11215, 232.29909)
 scale = Vector2(0.099723004, 0.099723004)
 
 [node name="Landolt26" parent="." instance=ExtResource("1_k8l88")]
+visible = false
 position = Vector2(134.11215, 232.29909)
 scale = Vector2(0.099723004, 0.099723004)
 
 [node name="Landolt27" parent="." instance=ExtResource("1_k8l88")]
+visible = false
 position = Vector2(159.11215, 232.29909)
 scale = Vector2(0.099723004, 0.099723004)
 
 [node name="Landolt28" parent="." instance=ExtResource("1_k8l88")]
+visible = false
 position = Vector2(184.11214, 232.29909)
 scale = Vector2(0.099723004, 0.099723004)
 
@@ -145,3 +154,24 @@ unique_name_in_owner = true
 position = Vector2(14.018692, 16.355164)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("3_ggeqn")
+
+[node name="LockoutTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+autostart = true
+
+[node name="TransparentX" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(110.74766, 121.962616)
+scale = Vector2(0.5, 0.60514015)
+texture = ExtResource("4_ds3jt")
+
+[node name="Success" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_r0bhj")
+volume_db = -10.0
+max_distance = 2000.0
+bus = &"SFX"
+
+[connection signal="timeout" from="LockoutTimer" to="." method="_on_lockout_timer_timeout"]

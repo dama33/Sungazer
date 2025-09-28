@@ -16,6 +16,7 @@ var player: Player
 var sun: Sun
 var is_sun_in_view: bool = false
 var is_sun_on_screen: bool = false
+var base_energy
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -43,6 +44,7 @@ func _physics_process(delta: float) -> void:
 		return
 	var is_visibility_obstructed_now = is_visibility_obstructed(sun.sun_raycast)
 	if is_visibility_obstructed_now and is_sun_in_view:
+		sun.directional_light.light_energy = base_energy
 		sun_exited_view.emit()
 		is_sun_in_view = false
 	elif not is_visibility_obstructed_now and not is_sun_in_view:
@@ -89,6 +91,7 @@ func get_sun_global_position() -> Vector3:
 func register_sun(sun_value: Sun):
 	sun_on_screen_notifier = sun_value.on_screen_notifier
 	self.sun = sun_value
+	base_energy = sun.directional_light.light_energy
 	
 	if player != null:
 		set_physics_process.call_deferred(true)
@@ -127,6 +130,7 @@ func _on_notifier_entered_screen() -> void:
 func _on_notifier_exited_screen() -> void:
 	is_sun_on_screen = false
 	if is_sun_in_view:
+		sun.directional_light.light_energy = base_energy
 		sun_exited_view.emit()
 		is_sun_in_view = false
 

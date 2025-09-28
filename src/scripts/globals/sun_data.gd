@@ -8,9 +8,10 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	path_follow.progress += 4*delta
-	if 1-path_follow.progress_ratio <0.001:
-		SignalBus.game_over.emit()
+	if path_follow:
+		path_follow.progress += 4*delta
+		if 1-path_follow.progress_ratio <0.001:
+			SignalBus.game_over.emit()
 
 
 func register_path_follow_3D(path_follow_value: PathFollow3D):
