@@ -5,16 +5,18 @@ extends Control
 var game_over_ui: PackedScene = preload("uid://c67s7krlh3p17")
 
 
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed("start_game"):
+		SignalBus.start_game.emit()
+
+
 func _ready() -> void:
-	$OnwardButton.pressed.connect(_on_onward_pressed)
-	$QuitButton.pressed.connect(_on_quit_pressed)
 	SignalBus.game_over.connect(_game_over)
 
 
 func load_game() -> void:
-	$OnwardButton.queue_free()
-	$QuitButton.queue_free()
-	$TitleScreenMock.queue_free()
+	if $TitleScreenMock:
+		$TitleScreenMock.queue_free()
 
 
 func show_victory_screen() -> void:
@@ -25,11 +27,5 @@ func show_victory_screen() -> void:
 	add_child(end_credits_scene)
 
 
-func _on_onward_pressed() -> void:
-	SignalBus.start_game.emit()
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
-	
 func _game_over():
 	add_child(game_over_ui.instantiate())

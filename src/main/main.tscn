@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce71envgjgdg7"]
+[gd_scene load_steps=16 format=3 uid="uid://ce71envgjgdg7"]
 
 [ext_resource type="Script" uid="uid://bxkq8xydqtroa" path="res://src/main/main.gd" id="1_3eh75"]
 [ext_resource type="PackedScene" uid="uid://whctcqsjd7eq" path="res://src/world/backyard.tscn" id="2_km7bn"]
 [ext_resource type="PackedScene" uid="uid://dupp1uoxoo1pe" path="res://src/world/inside_house.tscn" id="3_km7bn"]
 [ext_resource type="Script" uid="uid://diia06w2dsb1h" path="res://src/main/ui.gd" id="5_2nke2"]
 [ext_resource type="Script" uid="uid://cbd2jymfvjfom" path="res://src/main/world_environment.gd" id="5_jkpqq"]
-[ext_resource type="Texture2D" uid="uid://c17kc3xr43xvs" path="res://assets/title_screen_mock.png" id="6_2nke2"]
 [ext_resource type="PackedScene" uid="uid://18j23eh1uini" path="res://src/ui/end_credits.tscn" id="6_km7bn"]
 [ext_resource type="PackedScene" uid="uid://cbwehrgqexwum" path="res://src/ui/kid_expressions.tscn" id="8_km7bn"]
 [ext_resource type="PackedScene" uid="uid://bxxjtka4w0uaf" path="res://src/ui/blindness_dial.tscn" id="9_erw1m"]
 [ext_resource type="AudioStream" uid="uid://bt6mhldu8wi5j" path="res://src/audio/Music/sun gazers main theme.wav" id="10_erw1m"]
+[ext_resource type="Texture2D" uid="uid://cnl238im4buli" path="res://assets/title_screen.png" id="10_w0wra"]
+[ext_resource type="FontFile" uid="uid://ckcjp87ic1lur" path="res://assets/basic_font.otf" id="11_ibsor"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nwmkd"]
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -76,40 +77,33 @@ offset_top = 568.0
 offset_right = -512.0
 offset_bottom = -512.0
 
-[node name="OnwardButton" type="Button" parent="UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.731
-anchor_top = 0.185
-anchor_right = 0.94400007
-anchor_bottom = 0.286
-offset_left = -7.5200195
-offset_top = -10.800003
-offset_right = -1.4801025
-offset_bottom = 11.119995
-text = "Onward"
-
-[node name="QuitButton" type="Button" parent="UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.731
-anchor_top = 0.185
-anchor_right = 0.94400007
-anchor_bottom = 0.286
-offset_left = -7.5200195
-offset_top = 262.2
-offset_right = -1.4801025
-offset_bottom = 284.12
-text = "Quit"
-
 [node name="TitleScreenMock" type="TextureRect" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -530.0
+offset_right = 162.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("6_2nke2")
-expand_mode = 1
+texture = ExtResource("10_w0wra")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/TitleScreenMock"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 220.0
+offset_top = -204.0
+offset_right = 712.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_ibsor")
+theme_override_font_sizes/font_size = 80
+text = "Press X to Start"

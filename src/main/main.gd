@@ -18,7 +18,7 @@ func _ready() -> void:
 	UI = %UI
 	world = %World
 	SignalBus.swap_levels.connect(_swap_levels)
-	_on_start_game.call_deferred()
+	#_on_start_game.call_deferred()
 
 func _on_start_game() -> void:
 	UI.load_game()
