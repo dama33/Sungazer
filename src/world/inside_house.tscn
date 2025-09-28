@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dupp1uoxoo1pe"]
+[gd_scene load_steps=11 format=3 uid="uid://dupp1uoxoo1pe"]
 
 [ext_resource type="Texture2D" uid="uid://drm4j6iea0nbr" path="res://assets/DARLA.png" id="1_fgvrl"]
 [ext_resource type="Script" uid="uid://cg10847t75ou3" path="res://src/world/inside_house.gd" id="1_njatf"]
 [ext_resource type="PackedScene" uid="uid://22tlww7na263" path="res://src/world/test_whiteboard.tscn" id="2_oyqn4"]
+[ext_resource type="AudioStream" uid="uid://bguqyw5172f88" path="res://assets/sound/ambience/Sungazer_Basement_Ambience.mp3" id="3_oh3a6"]
 [ext_resource type="PackedScene" uid="uid://d2oqttfgmruky" path="res://assets/3d_assets/Eisel.glb" id="4_7ijhu"]
-[ext_resource type="ArrayMesh" uid="uid://cx14xrxfluv2a" path="res://assets/3d_assets/bulb_mesh.res" id="5_u15wj"]
+[ext_resource type="AudioStream" uid="uid://ct626bq6rujb7" path="res://assets/sound/sound_effects/Sungazer_LightSwitch_Hum.wav" id="4_sn46l"]
+[ext_resource type="ArrayMesh" uid="uid://dyhqii76lbdk2" path="res://assets/3d_assets/bulb_mesh.res" id="5_u15wj"]
+[ext_resource type="PackedScene" uid="uid://c15f6yw26lwvc" path="res://assets/3d_assets/basement.glb" id="6_n770i"]
 
 [sub_resource type="Curve3D" id="Curve3D_njatf"]
 _data = {
@@ -13,19 +16,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyqn4"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_njatf"]
-material = SubResource("StandardMaterial3D_oyqn4")
-size = Vector3(3, 3, 0.25)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ijhu"]
-albedo_color = Color(0.7463924, 0.49021932, 0.2922033, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_u15wj"]
-material = SubResource("StandardMaterial3D_7ijhu")
-size = Vector3(0.5, 3, 1)
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_njatf"]
 viewport_path = NodePath("Eisel/Sprite3D/SubViewport")
 
@@ -33,58 +23,34 @@ viewport_path = NodePath("Eisel/Sprite3D/SubViewport")
 script = ExtResource("1_njatf")
 whiteboard_scene = ExtResource("2_oyqn4")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4.9043393, 5.6356273)
-size = Vector3(10.776123, 1, 10.784206)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 5.7623916, 4.9000382, 0)
-size = Vector3(10.776123, 1, 12.261688)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(10.776123, 1, 12.261688)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.788189, 0)
-size = Vector3(10.776123, 1, 12.261688)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -5.762, 4.9, 0)
-size = Vector3(10.776123, 1, 12.261688)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4.904, -5.636)
-size = Vector3(10.776123, 1, 10.784206)
-
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6337476, 2.8818917)
 curve = SubResource("Curve3D_njatf")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 unique_name_in_owner = true
-transform = Transform3D(0.9999986, 0, 0, 0, 0.99998575, 0.00064654177, 0, -0.0006465425, 0.99998456, 0, 0, 0)
+transform = Transform3D(0.9999986, 0, 0, 0, 0.99997526, 0.000646535, 0, -0.0006465358, 0.9999741, 0, 0, 0)
 loop = false
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
 
+[node name="BasementAmbience" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9999997, -0.0006465516, 0, 0.0006465516, 0.9999997, 0, -3.6318831, -2.8842402)
+stream = ExtResource("3_oh3a6")
+volume_db = -10.0
+autoplay = true
+bus = &"SFX"
+
+[node name="LightHum" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9999997, -0.0006465516, 0, 0.0006465516, 0.9999997, 0, -3.6318831, -2.8842402)
+stream = ExtResource("4_sn46l")
+volume_db = -10.0
+autoplay = true
+bus = &"SFX"
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.19483449, 0, -0.15665095, 0, 0.25, 0, 0.15665095, 0, 0.19483449, 3.5215993, 2.465001, -2.8564026)
 texture = ExtResource("1_fgvrl")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.98129267, 0.19252196, 0, -0.19252196, 0.98129267, 0, 3.458952, -3.9005044)
-visible = false
-mesh = SubResource("BoxMesh_njatf")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 0.98129267, -0.19252196, 0, 0.19252196, 0.98129267, -0.75, -1.082, -0.765)
-mesh = SubResource("BoxMesh_u15wj")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 0.98129267, -0.19252196, 0, 0.19252196, 0.98129267, 0.75, -1.082, -0.765)
-mesh = SubResource("BoxMesh_u15wj")
-skeleton = NodePath("../..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.326884, -2.3837805)
@@ -109,5 +75,8 @@ size = Vector2i(482, 542)
 [node name="Light" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.13, 15.075, -2.56)
 mesh = ExtResource("5_u15wj")
+
+[node name="basement" parent="." instance=ExtResource("6_n770i")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.17627573, -1.0061188)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
