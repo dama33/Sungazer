@@ -2,6 +2,9 @@ extends Node
 
 var path_follow: PathFollow3D
 
+func _ready() -> void:
+	set_process(false)
+
 func _process(delta: float) -> void:
 	path_follow.progress += 4*delta
 	if 1-path_follow.progress_ratio <0.001:

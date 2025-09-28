@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnhixu6cympu8"]
+
+[ext_resource type="Script" uid="uid://cisawvdpbfekg" path="res://drawing_pad.gd" id="1_s1fc4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yn7nv"]
+
+[node name="DrawingPad" type="Node2D"]
+script = ExtResource("1_s1fc4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+show_behind_parent = true
+position = Vector2(958, 545)
+scale = Vector2(1914.49, 1098.198)
+mesh = SubResource("BoxMesh_yn7nv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-2, -3)
+anchor_mode = 0
+zoom = Vector2(0.6, 0.6)
+limit_enabled = false
+limit_left = -941
+limit_top = -545
+limit_right = 959
+limit_bottom = 535

@@ -17,12 +17,12 @@ func _ready() -> void:
 	UI = %UI
 	world = %World
 	SignalBus.swap_levels.connect(_swap_levels)
-	_on_start_game.call_deferred()
 
 func _on_start_game() -> void:
 	UI.load_game()
 	scene_instance = world_scene.instantiate()
 	world.add_child(scene_instance)
+	SunData.set_process(true)
 
 
 func _on_blindness_achieved() -> void:

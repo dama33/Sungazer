@@ -11,6 +11,11 @@ func _ready() -> void:
 	SignalBus.game_over.connect(_game_over)
 
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		if has_node("OnwardButton"):
+			$OnwardButton.pressed.emit()
+
 func load_game() -> void:
 	$OnwardButton.queue_free()
 	$QuitButton.queue_free()

@@ -6,7 +6,7 @@ signal eyes_damaged(current_health: int)
 
 
 ## Total health the eyes should start at 
-const STARTING_HEALTH: int = 100
+const STARTING_HEALTH: int = 100000
 ## The maximum damage that can be inflicted per second
 const MAX_DPS: float = 2000
 
