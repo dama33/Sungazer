@@ -14,3 +14,4 @@ signal mom_is_watching
 signal mom_is_not_watching
 signal mom_is_chasing
 signal mom_is_not_chasing
+signal player_enter_tree

@@ -12,6 +12,9 @@ func _exit_tree() -> void:
 	StareChecker.sun_entered_view.disconnect(_temp_enter)
 	StareChecker.sun_exited_view.disconnect(_temp_exit)
 
+func _enter_tree() -> void:
+	SignalBus.player_enter_tree.emit()
+
 func _ready():
 	StareChecker.register_player(self)
 	FOV_DEFAULT = player_camera.fov
