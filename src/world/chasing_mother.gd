@@ -61,6 +61,11 @@ enum State {
 
 func _exit_tree() -> void:
 	state = State.IDLE
+	%ExitHouseTimer.stop()
+	%EnterHouseTimer.stop()
+	%NavTimer.stop()
+	%EnterHouseTimer.timeout.disconnect(_on_enter_house_timer_timeout)
+	%ExitHouseTimer.timeout.disconnect(_on_exit_house_timer_timeout)
 
 func _ready():
 	%EnterHouseTimer.timeout.connect(_on_enter_house_timer_timeout)
