@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bt6ylxhqr15g1"
+path="res://.godot/imported/sun gazer main theme.mp3-1e59b5ad64327cf17d03b30ddecf6a10.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/sun gazer main theme.mp3"
+dest_files=["res://.godot/imported/sun gazer main theme.mp3-1e59b5ad64327cf17d03b30ddecf6a10.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

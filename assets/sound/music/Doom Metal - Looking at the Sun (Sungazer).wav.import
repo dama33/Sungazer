@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0xkjpuxii2ep"
+path="res://.godot/imported/Doom Metal - Looking at the Sun (Sungazer).wav-28703f8beca1665d7aa9db5a93afb09c.sample"
+
+[deps]
+
+source_file="res://assets/sound/music/Doom Metal - Looking at the Sun (Sungazer).wav"
+dest_files=["res://.godot/imported/Doom Metal - Looking at the Sun (Sungazer).wav-28703f8beca1665d7aa9db5a93afb09c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
