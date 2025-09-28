@@ -24,6 +24,10 @@ var sound_uids: Dictionary = {
 	DoorSounds.DOOR_OPEN: load("uid://cpv2m4qfqomfx")
 }
 
+func _exit_tree() -> void:
+	SignalBus.close_door.disconnect(close_door)
+	SignalBus.open_door.disconnect(open_door)
+
 func _ready():
 	door_rotation_point = $DoorRotationPoint
 	set_physics_process(false)
