@@ -22,7 +22,7 @@ func _ready() -> void:
 
 
 #func _physics_process(_delta: float) -> void:
-	#last_damaged_pixel = Vector3.ZERO uid://d1aquttp0twy5
+	#last_damaged_pixel = Vector3.ZERO
 
 
 func get_current_health() -> int:
